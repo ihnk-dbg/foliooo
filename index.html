@@ -1,0 +1,1793 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Ian Hnk — Full-Stack Developer & Computer Science Student</title>
+  <meta name="title" content="Ian Hnk — Full-Stack Developer & Computer Science Student" />
+  <meta name="description" content="Portfolio of Ian Hnk, a full-stack developer specializing in React, Node.js, Python, and TypeScript. Building scalable web applications and exploring AI integrations." />
+  <meta name="keywords" content="full-stack developer, web developer, React, Node.js, Python, TypeScript, JavaScript, portfolio, software engineer" />
+  <meta name="author" content="Ian Hnk" />
+  <meta name="theme-color" content="#4f46e5" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://c1tenn.dev/" />
+  <meta property="og:title" content="Ian Hnk — Full-Stack Developer & Computer Science Student" />
+  <meta property="og:description" content="Portfolio of Ian Hnk, a full-stack developer specializing in React, Node.js, Python, and TypeScript. Building scalable web applications and exploring AI integrations." />
+  <meta property="og:image" content="https://c1tenn.dev/og-image.jpg" />
+  <meta property="og:site_name" content="Ian Hnk Portfolio" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://c1tenn.dev/" />
+  <meta property="twitter:title" content="Ian Hnk — Full-Stack Developer & Computer Science Student" />
+  <meta property="twitter:description" content="Portfolio of Ian Hnk, a full-stack developer specializing in React, Node.js, Python, and TypeScript." />
+  <meta property="twitter:image" content="https://c1tenn.dev/og-image.jpg" />
+  <meta property="twitter:creator" content="@c1tenn" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  <!-- Performance: Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Fonts: Preload critical font -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ian Hnk",
+    "url": "https://c1tenn.dev",
+    "image": "https://c1tenn.dev/og-image.jpg",
+    "sameAs": [
+      "https://github.com/ihnk-dbg",
+      "https://www.linkedin.com/in/ianhnk",
+      "https://x.com/c1tenn"
+    ],
+    "jobTitle": "Full-Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "email": "ianhnk01@gmail.com",
+    "knowsAbout": [
+      "Web Development",
+      "Full-Stack Development",
+      "React",
+      "Node.js",
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "Software Engineering"
+    ]
+  }
+  </script>
+  
+  <!-- Google Analytics (replace with your tracking ID) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script> -->
+</head>
+<body class="no-transitions">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <!-- HEADER / NAVBAR -->
+  <header>
+    <nav id="navbar" class="navbar" role="navigation" aria-label="Main">
+      <div class="nav-inner">
+  <a class="brand" href="#home" aria-label="Ian Hnk homepage">
+    <span class="brand-logo">IH</span>
+    <span class="brand-text"><span class="brand-mark">Ian</span> Hnk</span>
+  </a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+        <svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M0 7h22M0 13h22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+
+      <ul id="nav-links" class="nav-links" role="menubar" aria-label="Primary">
+        <li role="none"><a role="menuitem" href="#home" data-target="home">Home</a></li>
+        <li role="none"><a role="menuitem" href="#about" data-target="about">About</a></li>
+        <li role="none" class="nav-item-dropdown">
+          <a role="menuitem" href="#projects" data-target="projects" class="nav-dropdown-trigger">Projects <span class="dropdown-arrow">▼</span> <span class="dropdown-badge">5+</span></a>
+          <div class="nav-dropdown projects-dropdown">
+            <div class="dropdown-section">
+              <h4 class="dropdown-title">Web Apps</h4>
+            <div class="dropdown-project">
+              <img src="assets/images/project-novaboard.jpg" alt="NovaBoard" loading="lazy">
+              <div>
+                <strong>NovaBoard</strong>
+                <span>AI Dashboard</span>
+              </div>
+            </div>
+            </div>
+            <div class="dropdown-section">
+              <h4 class="dropdown-title">Open Source</h4>
+            <div class="dropdown-project">
+              <img src="assets/images/project-fluxapi.jpg" alt="FluxAPI" loading="lazy">
+              <div>
+                <strong>FluxAPI</strong>
+                <span>Microservices</span>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-section">
+              <h4 class="dropdown-title">Side Projects</h4>
+              <div class="dropdown-project">
+                <img src="assets/images/project-persona.jpg" alt="Persona" loading="lazy">
+                <div>
+                  <strong>Persona</strong>
+                  <span>Static Site Generator</span>
+                </div>
+              </div>
+            </div>
+            <a href="#projects" class="dropdown-view-all">View All Projects →</a>
+          </div>
+        </li>
+        <li role="none" class="nav-item-dropdown">
+          <a role="menuitem" href="#skills" data-target="skills" class="nav-dropdown-trigger">Skills <span class="dropdown-arrow">▼</span> <span class="dropdown-badge">10+</span></a>
+          <div class="nav-dropdown skills-dropdown">
+            <div class="dropdown-section">
+              <h4 class="dropdown-title">Frontend</h4>
+            <div class="skill-item">
+              <span class="skill-icon">⚛️</span>
+              <div class="skill-info">
+                <strong>React</strong>
+                  <div class="skill-bar-mini"><div class="skill-bar-fill" data-width="90"></div></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-icon">📘</span>
+                <div class="skill-info">
+                  <strong>TypeScript</strong>
+                  <div class="skill-bar-mini"><div class="skill-bar-fill" data-width="85"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-section">
+              <h4 class="dropdown-title">Backend</h4>
+            <div class="skill-item">
+              <span class="skill-icon">🐍</span>
+              <div class="skill-info">
+                <strong>Python</strong>
+                  <div class="skill-bar-mini"><div class="skill-bar-fill" data-width="95"></div></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-icon">🟢</span>
+              <div class="skill-info">
+                <strong>Node.js</strong>
+                  <div class="skill-bar-mini"><div class="skill-bar-fill" data-width="88"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-section">
+              <h4 class="dropdown-title">Database</h4>
+              <div class="skill-item">
+                <span class="skill-icon">🐘</span>
+                <div class="skill-info">
+                  <strong>PostgreSQL</strong>
+                  <div class="skill-bar-mini"><div class="skill-bar-fill" data-width="82"></div></div>
+              </div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-icon">🔴</span>
+              <div class="skill-info">
+                  <strong>Redis</strong>
+                  <div class="skill-bar-mini"><div class="skill-bar-fill" data-width="80"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-section">
+              <h4 class="dropdown-title">DevOps</h4>
+              <div class="skill-item">
+                <span class="skill-icon">🐳</span>
+                <div class="skill-info">
+                  <strong>Docker</strong>
+                  <div class="skill-bar-mini"><div class="skill-bar-fill" data-width="85"></div></div>
+              </div>
+            </div>
+            <div class="skill-item">
+                <span class="skill-icon">☸️</span>
+              <div class="skill-info">
+                  <strong>Kubernetes</strong>
+                  <div class="skill-bar-mini"><div class="skill-bar-fill" data-width="75"></div></div>
+                </div>
+              </div>
+            </div>
+            <a href="#skills" class="dropdown-view-all">View All Skills →</a>
+          </div>
+        </li>
+        <li role="none"><a role="menuitem" href="#contact" data-target="contact">Contact</a></li>
+      </ul>
+      
+      <div class="nav-right">
+        <a href="#contact" class="btn-cta" data-target="contact">Hire Me</a>
+        <button id="theme-switch" class="theme-toggle" aria-label="Toggle Theme">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <!-- HERO -->
+  <main id="main">
+  <section id="home" class="hero" data-parallax>
+      <!-- Subtle animated background -->
+      <div class="hero-background">
+        <div class="hero-gradient"></div>
+        <div class="hero-particles"></div>
+      </div>
+
+      <!-- Split-screen layout: Left (text) + Right (visual) -->
+      <div class="hero-inner">
+        <!-- Left Side: Text Content -->
+        <div class="hero-left">
+          <h1 class="hero-headline reveal">
+            Hi, I'm <span class="name-highlight">Ian Hnk</span>
+            <span class="wave-emoji" aria-hidden="true">👋</span>
+          </h1>
+
+          <p class="hero-subheadline reveal delay-1">
+            <span id="profession-typed" class="profession-typed" aria-live="polite">Full-Stack Developer</span>
+            <span class="typing-cursor">|</span>
+          </p>
+
+          <p class="hero-description reveal delay-2">
+            I build modern web applications with <strong>React</strong>, <strong>Node.js</strong> & <strong>PostgreSQL</strong>.
+            Creating scalable systems and interactive experiences that users love.
+          </p>
+          
+          <div class="hero-highlights reveal delay-2">
+            <div class="highlight-item">
+              <span class="highlight-icon">⚡</span>
+              <span>Fast & Performant</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">🔒</span>
+              <span>Secure by Design</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-icon">📈</span>
+              <span>Scalable Solutions</span>
+            </div>
+          </div>
+
+          <!-- Tech Stack Icons -->
+          <div class="hero-tech-stack reveal delay-3">
+            <div class="tech-icon" data-tooltip="React">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.83 1.7-3.087 3.874-3.565 5.132-.477 1.258-.477 2.178-.174 2.803.642 1.3 2.415 2.16 4.17 2.16.31 0 .618-.015.924-.045-.23-.464-.48-.935-.748-1.405-.99.03-1.93.03-2.78-.03.477-1.1 1.38-2.5 2.558-3.96 1.32-1.56 2.75-2.76 3.9-3.33.64-.31 1.18-.39 1.52-.2.3.17.45.6.45 1.27 0 .66-.15 1.44-.45 2.31-.3.87-.75 1.84-1.35 2.88l-.01.02c-.6 1.04-1.35 2.1-2.23 3.15-.88 1.05-1.86 2.05-2.91 2.95l2.87 4.98c.18-.05.36-.1.55-.15 1.8-.45 3.84-.6 5.76-.45 1.92.15 3.75.6 5.1 1.35 1.35.75 2.25 1.8 2.55 3 .3 1.2 0 2.55-.9 4.05l-.01.01c-.9 1.5-2.25 3.15-3.9 4.8-1.65 1.65-3.6 3.15-5.55 4.35-1.95 1.2-3.9 2.1-5.7 2.7-1.8.6-3.45.9-4.95.9-1.5 0-2.85-.3-4.05-.9-1.2-.6-2.1-1.5-2.7-2.7-.6-1.2-.9-2.55-.9-4.05 0-1.5.3-3 .9-4.5.6-1.5 1.5-3 2.7-4.35 1.2-1.35 2.7-2.55 4.35-3.6 1.65-1.05 3.45-1.95 5.25-2.7 1.8-.75 3.6-1.35 5.4-1.8 1.8-.45 3.6-.75 5.4-.9z"/></svg>
+            </div>
+            <div class="tech-icon" data-tooltip="Node.js">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392 c1.307,0.654,2.104-0.116,2.104-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-1.984-0.551L2.28,19.396c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.570,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.265-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z M19.099,13.993 c0-1.9-1.284-2.406-3.987-2.763c-2.731-0.361-3.009-0.548-3.009-1.187c0-0.528,0.235-1.233,2.258-1.233 c1.807,0,2.473,0.389,2.747,1.607c0.024,0.115,0.129,0.199,0.247,0.199h1.141c0.071,0,0.138-0.031,0.186-0.081 c0.048-0.054,0.074-0.123,0.067-0.196c-0.177-2.243-1.603-3.465-4.494-3.465c-2.804,0-4.252,1.185-4.252,3.206 c0,1.901,1.446,2.445,3.833,2.713c2.727,0.361,3.188,0.703,3.188,1.222c0,0.774-0.42,1.237-2.532,1.237 c-2.239,0-2.915-0.494-3.243-1.747c-0.027-0.104-0.121-0.178-0.231-0.178h-1.137c-0.141,0-0.254,0.114-0.254,0.253 c0,0.389,0.217,2.546,3.586,3.274c1.317,0.285,2.532,0.416,3.721,0.416c2.351,0,3.999-0.627,4.841-1.908 c0.487-0.744,0.65-1.698,0.65-2.892H19.099z"/></svg>
+            </div>
+            <div class="tech-icon" data-tooltip="PostgreSQL">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5594 15.5333C23.4701 15.8084 23.2769 16.0356 23.0211 16.1692C22.7653 16.3028 22.4671 16.3333 22.1919 16.2539L18.1826 15.1289C17.9075 15.0495 17.6803 14.8563 17.5467 14.6005C17.4131 14.3447 17.3826 14.0465 17.462 13.7714L18.587 9.76211C18.6664 9.48696 18.8596 9.25977 19.1154 9.12617C19.3712 8.99257 19.6694 8.96211 19.9445 9.04151L23.9538 10.1665C24.2289 10.2459 24.4561 10.4391 24.5897 10.6949C24.7233 10.9507 24.7538 11.2489 24.6744 11.524L23.5594 15.5333Z"/><path d="M12.0445 2.1665C11.7694 2.2459 11.5422 2.4391 11.4086 2.6949C11.275 2.9507 11.2445 3.2489 11.324 3.524L12.449 7.5333C12.5284 7.8084 12.7216 8.0356 12.9774 8.1692C13.2332 8.3028 13.5314 8.3333 13.8065 8.2539L17.8158 7.1289C18.0909 7.0495 18.3181 6.8563 18.4517 6.6005C18.5853 6.3447 18.6158 6.0465 18.5364 5.7714L17.4114 1.76211C17.332 1.48696 17.1388 1.25977 16.883 1.12617C16.6272 0.99257 16.329 0.96211 16.0539 1.04151L12.0445 2.1665Z"/><path d="M1.324 3.524C1.2445 3.2489 1.275 2.9507 1.4086 2.6949C1.5422 2.4391 1.7694 2.2459 2.0445 2.1665L6.0539 1.04151C6.329 0.96211 6.6272 0.99257 6.883 1.12617C7.1388 1.25977 7.332 1.48696 7.4114 1.76211L8.5364 5.7714C8.6158 6.0465 8.5853 6.3447 8.4517 6.6005C8.3181 6.8563 8.0909 7.0495 7.8158 7.1289L3.8065 8.2539C3.5314 8.3333 3.2332 8.3028 2.9774 8.1692C2.7216 8.0356 2.5284 7.8084 2.449 7.5333L1.324 3.524Z"/><path d="M1.324 20.476C1.2445 20.7511 1.275 21.0493 1.4086 21.3051C1.5422 21.5609 1.7694 21.7541 2.0445 21.8335L6.0539 22.9585C6.329 23.0379 6.6272 23.0074 6.883 22.8738C7.1388 22.7402 7.332 22.513 7.4114 22.2379L8.5364 18.2286C8.6158 17.9535 8.5853 17.6553 8.4517 17.3995C8.3181 17.1437 8.0909 16.9505 7.8158 16.8711L3.8065 15.7461C3.5314 15.6667 3.2332 15.6972 2.9774 15.8308C2.7216 15.9644 2.5284 16.1916 2.449 16.4667L1.324 20.476Z"/><path d="M12.0445 21.8335C11.7694 21.7541 11.5422 21.5609 11.4086 21.3051C11.275 21.0493 11.2445 20.7511 11.324 20.476L12.449 16.4667C12.5284 16.1916 12.7216 15.9644 12.9774 15.8308C13.2332 15.6972 13.5314 15.6667 13.8065 15.7461L17.8158 16.8711C18.0909 16.9505 18.3181 17.1437 18.4517 17.3995C18.5853 17.6553 18.6158 17.9535 18.5364 18.2286L17.4114 22.2379C17.332 22.513 17.1388 22.7402 16.883 22.8738C16.6272 23.0074 16.329 23.0379 16.0539 22.9585L12.0445 21.8335Z"/></svg>
+            </div>
+            <div class="tech-icon" data-tooltip="TypeScript">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 4.148 4.148 0 0 1-1.256-.493v-2.63a5.5 5.5 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444c-.304-.15-.671-.304-1.103-.464-.43-.16-.863-.343-1.29-.55-.425-.206-.8-.449-1.123-.728a3.388 3.388 0 0 1-.763-1.016 2.987 2.987 0 0 1-.268-1.306c0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 5.782 5.782 0 0 1 1.77-.268zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg>
+            </div>
+            <div class="tech-icon" data-tooltip="Python">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.38 0c-.053.012-.12.024-.18.048-.48.12-.84.36-1.2.72-.36.36-.6.72-.72 1.2-.024.06-.036.127-.048.18H9.6c-.6 0-1.2.6-1.2 1.2v1.2H4.8c-1.2 0-2.4 1.2-2.4 2.4v2.4c0 .6.6 1.2 1.2 1.2h1.2v-1.2c0-.6.6-1.2 1.2-1.2h7.2c.6 0 1.2-.6 1.2-1.2V4.8c0-.6-.6-1.2-1.2-1.2h-1.2V2.4c0-.6.6-1.2 1.2-1.2h2.4c.6 0 1.2.6 1.2 1.2v1.2h1.2c.6 0 1.2.6 1.2 1.2v2.4c0 .6-.6 1.2-1.2 1.2h-1.2v1.2c0 .6-.6 1.2-1.2 1.2H9.6c-.6 0-1.2.6-1.2 1.2v7.2c0 .6.6 1.2 1.2 1.2h1.2v1.2c0 1.2-1.2 2.4-2.4 2.4H5.4c-1.2 0-2.4-1.2-2.4-2.4v-2.4c0-.6.6-1.2 1.2-1.2h1.2v-1.2c0-1.2 1.2-2.4 2.4-2.4h7.2c1.2 0 2.4 1.2 2.4 2.4v7.2c0 1.2-1.2 2.4-2.4 2.4h-2.4c-.6 0-1.2-.6-1.2-1.2v-1.2H9.6c-1.2 0-2.4-1.2-2.4-2.4V9.6c0-1.2 1.2-2.4 2.4-2.4h7.2c1.2 0 2.4 1.2 2.4 2.4v2.4c0 .6-.6 1.2-1.2 1.2h-1.2v1.2c0 .6.6 1.2 1.2 1.2h2.4c1.2 0 2.4 1.2 2.4 2.4v2.4c0 1.2-1.2 2.4-2.4 2.4h-2.4c-1.2 0-2.4-1.2-2.4-2.4v-1.2h-1.2c-1.2 0-2.4-1.2-2.4-2.4V9.6c0-1.2-1.2-2.4-2.4-2.4z"/></svg>
+            </div>
+            <div class="tech-icon" data-tooltip="Next.js">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.5714 0L1 5.25V18.75L11.5714 24L22.1429 18.75V5.25L11.5714 0ZM20.1429 17.3214L11.5714 21.5357L3 17.3214V6.67857L11.5714 2.46429L20.1429 6.67857V17.3214ZM16.7143 7.92857L11.5714 5.25L6.42857 7.92857V16.0714L11.5714 18.75L16.7143 16.0714V7.92857Z"/></svg>
+            </div>
+            <div class="tech-icon" data-tooltip="Docker">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.983 10.808c-.181-1.744-1.523-3.156-3.272-3.156-.05 0-.1.002-.15.004l-.15.008c-.1.002-.2.003-.302.003h-.402c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1-.05 0-.1 0-.15-.002l-.15-.003c-.1-.002-.2-.003-.3-.003h-.4c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1-.05 0-.1 0-.15-.002l-.15-.003c-.1-.002-.2-.003-.3-.003h-.4c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1-.05 0-.1 0-.15-.002l-.15-.003c-.1-.002-.2-.003-.3-.003h-.4c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1-.05 0-.1 0-.15-.002l-.15-.003c-.1-.002-.2-.003-.3-.003h-.4c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1-.05 0-.1 0-.15-.002l-.15-.003c-.1-.002-.2-.003-.3-.003h-.4c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1z"/></svg>
+            </div>
+            <div class="tech-icon" data-tooltip="AWS">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.8 21.2l-1.4-3.5h-.7v3.5H2.4V13h2.7c1.3 0 2.1.7 2.1 1.8 0 .8-.5 1.4-1.2 1.7l1.5 3.7h-1.7zm-1.1-5.2h-1v1.8h1c.6 0 .9-.3.9-.9s-.3-.9-.9-.9zm8.1 5.2l-2.1-6.4h1.6l1.6 4.8 1.6-4.8h1.6l-2.1 6.4h-1.2zm7.1-1.2c-.3.2-.7.3-1.1.3-.4 0-.6-.1-.6-.4 0-.2.2-.3.5-.3h.6c.3 0 .6-.1.8-.3.2-.2.3-.5.3-.9 0-.7-.5-1.2-1.3-1.2-.5 0-1 .2-1.3.5l.9.9c.1-.1.3-.2.5-.2.2 0 .3.1.3.3 0 .2-.1.3-.4.3h-.6c-.3 0-.6.1-.8.3-.2.2-.3.5-.3.9 0 .7.5 1.2 1.3 1.2.6 0 1.1-.2 1.4-.5l-.9-.9zm3.1.2h-2.3v-1.2h2.1v-.9h-2.1v-1h2.3V13h2.8v6.2h-2.8v-1.2z"/></svg>
+            </div>
+            <div class="tech-icon" data-tooltip="MongoDB">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0 1 11.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296 1.196-.84 1.196-1.54 0-.294-.22-.528-.412-.736-.28-.308-.53-.59-.53-1.177 0-.624.396-.89.702-1.298.443-.58.702-1.19.702-1.893a3.78 3.78 0 0 0-.702-2.13zm-5.336 8.49s0-8.9-2.148-11.55c-.212-.243-.376-.53-.376-.908 0-.728.607-1.133 1.238-1.807.393-.412.607-1.096.607-1.53 0-.302-.188-.58-.452-.767a4.936 4.936 0 0 1 .51-1.7c.305.13.607.27.877.435.344.22.707.48.96.78.11.14.19.29.246.45a4.09 4.09 0 0 1 .11.95c.01.13.02.26.03.39.15 1.58.33 3.15.52 4.71.19 1.56.38 3.1.58 4.65.2 1.55.4 3.1.6 4.65.2 1.55.4 3.1.6 4.65.2 1.55.38 3.1.58 4.65.19 1.56.37 3.12.52 4.71.01.13.02.26.03.39.04.32.08.64.11.95.06.16.14.31.246.45.253.3.616.56.96.78.27.165.573.305.877.435a4.936 4.936 0 0 1-.51-1.7c-.264-.187-.452-.465-.452-.767 0-.434.214-1.118.607-1.53.631-.674 1.238-1.079 1.238-1.807 0-.378-.164-.665-.376-.908-2.148-2.65-2.148-11.55-2.148-11.55z"/></svg>
+            </div>
+            <div class="tech-icon" data-tooltip="Redis">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.429 11.99c-1.497-1.46-3.51-2.16-5.78-2.16-.65 0-1.29.07-1.9.2-.78-2.36-2.77-4.25-5.2-5.05-.5-2.55-2.67-4.5-5.3-4.5-2.97 0-5.38 2.41-5.38 5.38 0 .96.25 1.86.69 2.64C.55 9.5 0 10.68 0 12c0 2.21 1.79 4 4 4h.05c.35.77.85 1.45 1.48 2.01C4.5 19.5 5.5 20 6.5 20c.5 0 1-.1 1.45-.3.9.6 1.95.95 3.05.95 1.22 0 2.36-.42 3.26-1.12.45.2.95.3 1.45.3 1 0 2-.5 2.97-1.49.63-.56 1.13-1.24 1.48-2.01H20c2.21 0 4-1.79 4-4 0-1.32-.55-2.5-1.43-3.35.44-.78.69-1.68.69-2.64 0-2.97-2.41-5.38-5.38-5.38-2.63 0-4.8 1.95-5.3 4.5-2.43.8-4.42 2.69-5.2 5.05-.61-.13-1.25-.2-1.9-.2-2.27 0-4.28.7-5.78 2.16C.55 9.5 0 10.68 0 12c0 2.21 1.79 4 4 4h.05c.35.77.85 1.45 1.48 2.01C4.5 19.5 5.5 20 6.5 20c.5 0 1-.1 1.45-.3.9.6 1.95.95 3.05.95 1.22 0 2.36-.42 3.26-1.12.45.2.95.3 1.45.3 1 0 2-.5 2.97-1.49.63-.56 1.13-1.24 1.48-2.01H20c2.21 0 4-1.79 4-4 0-1.32-.55-2.5-1.43-3.35z"/></svg>
+            </div>
+            <div class="tech-icon" data-tooltip="Git">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.44.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.083 1.903.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.72-.719-.72-1.879 0-2.598.177-.178.383-.313.602-.408v-6.41c-.219-.095-.425-.23-.602-.409-.72-.719-1.88-.719-2.599 0-.721.72-.721 1.88 0 2.599.146.145.312.262.488.348v6.414c-.176.086-.342.203-.488.348-.72.722-1.884.722-2.604 0-.719-.72-.719-1.881 0-2.6.72-.72 1.881-.72 2.6 0 .147.146.313.262.49.348v-6.415c.177-.086.343-.202.49-.348.719-.72.719-1.88 0-2.599-.72-.72-1.88-.72-2.599 0-.147.146-.313.262-.49.348L5.536 3.866 1.35 8.052c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="hero-buttons reveal delay-4">
+            <a class="btn btn-primary" href="#projects" data-target="projects" aria-label="View my work">
+              <span>View My Work</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="#contact" data-target="contact" aria-label="Contact me">
+              <span>Contact Me</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side: Visual Element -->
+        <div class="hero-right reveal delay-2">
+          <div class="hero-visual">
+            <div class="code-preview">
+              <div class="code-header">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-title">portfolio.tsx</span>
+              </div>
+              <div class="code-content">
+                <div class="code-line"><span class="code-keyword">const</span> <span class="code-var">developer</span> = {</div>
+                <div class="code-line">  <span class="code-prop">name</span>: <span class="code-string">'Ian Hnk'</span>,</div>
+                <div class="code-line">  <span class="code-prop">role</span>: <span class="code-string">'Full-Stack Developer'</span>,</div>
+                <div class="code-line">  <span class="code-prop">skills</span>: [</div>
+                <div class="code-line">    <span class="code-string">'React'</span>,</div>
+                <div class="code-line">    <span class="code-string">'Node.js'</span>,</div>
+                <div class="code-line">    <span class="code-string">'PostgreSQL'</span></div>
+                <div class="code-line">  ],</div>
+                <div class="code-line">  <span class="code-prop">available</span>: <span class="code-boolean">true</span></div>
+                <div class="code-line">};</div>
+              </div>
+            </div>
+            <div class="floating-shapes">
+              <div class="shape shape-1"></div>
+              <div class="shape shape-2"></div>
+              <div class="shape shape-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span class="scroll-text">Scroll</span>
+      </a>
+    </section>
+
+    <!-- STATS -->
+    <section id="stats" class="container stats-section reveal">
+      <header class="section-header">
+        <h2>Key metrics</h2>
+        <p class="muted">A snapshot of impact, reach and experience.</p>
+      </header>
+
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <div class="stat-icon">👥</div>
+          <div class="stat-value" data-target="120000">0</div>
+          <div class="stat-label">Monthly Active Users</div>
+          <div class="stat-trend">↗ Growing</div>
+        </div>
+        <div class="stat reveal delay-1">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-value" data-target="99.99">0%</div>
+          <div class="stat-label">Average Uptime</div>
+          <div class="stat-trend">✓ SLO-driven</div>
+        </div>
+        <div class="stat reveal delay-2">
+          <div class="stat-icon">🚀</div>
+          <div class="stat-value" data-target="35">0</div>
+          <div class="stat-label">% Faster Reports</div>
+          <div class="stat-trend">↑ Performance gain</div>
+        </div>
+        <div class="stat reveal delay-3">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-value" data-target="200">0</div>
+          <div class="stat-label">OSS Users</div>
+          <div class="stat-trend">→ Active community</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container about-section reveal">
+      <header class="section-header">
+        <h2>About</h2>
+        <p class="muted">Get to know me, my skills, and what drives me as a developer.</p>
+      </header>
+
+      <div class="about-grid">
+        <!-- Left Column: Content -->
+        <div class="about-content reveal">
+          <div class="about-intro">
+            <h3 class="about-greeting">Hi, I'm <span class="name-highlight">Ian Hnk</span></h3>
+            <p class="about-role">Full-Stack Developer building modern web applications</p>
+            
+            <div class="about-bio">
+              <p>
+                Hey, I'm <strong>Ian Hnk</strong>, a passionate full-stack developer and computer science student currently studying at university. Over the past few years, I've been building my foundation in software development and exploring a wide range of programming languages and frameworks.
+              </p>
+              <p>
+                I love working with <strong>JavaScript</strong> (React, Node.js, Express), and I'm diving deeper into <strong>Python</strong> and <strong>TypeScript</strong> to strengthen both my backend and system-level development skills. I enjoy designing interactive front-end experiences while understanding how things work under the hood.
+              </p>
+              <p>
+                When I'm not coding, I'm usually experimenting with new tools, reading about AI, or improving my algorithms knowledge. My goal is to grow into a developer who can build scalable, intelligent systems that make people's lives easier.
+              </p>
+            </div>
+            
+            <div class="contact-info">
+              <a href="mailto:ianhnk01@gmail.com"><i class="fa-solid fa-envelope"></i> ianhnk01@gmail.com</a>
+              <a href="https://github.com/ihnk-dbg" target="_blank"><i class="fa-brands fa-github"></i> ihnk-dbg</a>
+            </div>
+          </div>
+
+          <!-- Key Skills -->
+          <div class="about-skills reveal delay-1">
+            <h4>Tech Stack</h4>
+            <div class="skills-categories">
+              <div class="skill-category">
+                <span class="category-label">Frontend</span>
+                <div class="skill-badges">
+                  <span class="skill-badge">React</span>
+                  <span class="skill-badge">TypeScript</span>
+                  <span class="skill-badge">Next.js</span>
+                  <span class="skill-badge">CSS</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <span class="category-label">Backend</span>
+                <div class="skill-badges">
+                  <span class="skill-badge">Node.js</span>
+                  <span class="skill-badge">Python</span>
+                  <span class="skill-badge">FastAPI</span>
+                  <span class="skill-badge">Express</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <span class="category-label">Database</span>
+                <div class="skill-badges">
+                  <span class="skill-badge">PostgreSQL</span>
+                  <span class="skill-badge">MongoDB</span>
+                  <span class="skill-badge">Redis</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <span class="category-label">DevOps</span>
+                <div class="skill-badges">
+                  <span class="skill-badge">Docker</span>
+                  <span class="skill-badge">Git</span>
+                  <span class="skill-badge">AWS</span>
+                  <span class="skill-badge">CI/CD</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievements / Metrics -->
+          <div class="about-achievements reveal delay-2">
+            <h4>Achievements</h4>
+            <div class="achievements-grid">
+              <div class="achievement-item">
+                <div class="achievement-icon">📦</div>
+                <div class="achievement-value">50+</div>
+                <div class="achievement-label">Projects</div>
+              </div>
+              <div class="achievement-item">
+                <div class="achievement-icon">⭐</div>
+                <div class="achievement-value">200+</div>
+                <div class="achievement-label">OSS Users</div>
+              </div>
+              <div class="achievement-item">
+                <div class="achievement-icon">💼</div>
+                <div class="achievement-value">7+</div>
+                <div class="achievement-label">Years Experience</div>
+              </div>
+              <div class="achievement-item">
+                <div class="achievement-icon">🚀</div>
+                <div class="achievement-value">120k+</div>
+                <div class="achievement-label">Users Served</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="about-actions reveal delay-3">
+            <a href="#projects" class="btn btn-primary" data-target="projects">See My Projects</a>
+            <a href="/resume.pdf" class="btn btn-secondary" download="Ian-Hnk-Resume.pdf">Download Résumé</a>
+            <button id="open-assistant" class="btn btn-ghost">Talk to my assistant</button>
+          </div>
+        </div>
+
+        <!-- Right Column: AI Assistant -->
+        <div class="about-visual reveal delay-1">
+          <div class="byt-assistant-wrapper">
+            <div class="byt-assistant">
+              <!-- Header -->
+              <div class="byt-header">
+                <div class="byt-avatar">
+                  <div class="byt-avatar-glow"></div>
+                  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="20" fill="url(#bytGradient)"/>
+                    <path d="M20 12 C16 12 12 15 12 19 L12 23 C12 25 14 27 16 27 L24 27 C26 27 28 25 28 23 L28 19 C28 15 24 12 20 12 Z" fill="white" opacity="0.9"/>
+                    <circle cx="17" cy="19" r="1.5" fill="#4F46E5"/>
+                    <circle cx="23" cy="19" r="1.5" fill="#4F46E5"/>
+                    <path d="M17 22 Q20 24 23 22" stroke="#4F46E5" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    <defs>
+                      <linearGradient id="bytGradient" x1="0" y1="0" x2="40" y2="40">
+                        <stop offset="0%" stop-color="#4F46E5"/>
+                        <stop offset="100%" stop-color="#6366F1"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <div class="byt-info">
+                  <h4 class="byt-name">byt</h4>
+                  <p class="byt-status">
+                    <span class="status-dot"></span>
+                    <span>Ian's Assistant</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Messages Area -->
+              <div class="byt-messages" id="byt-messages">
+                <div class="byt-message byt-message-bot">
+                  <div class="message-content">
+                    <p>Hi! I'm <strong>byt</strong>, Ian's AI assistant. Ask me anything about his experience, skills, or projects! 👋</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Input Area -->
+              <div class="byt-input-area">
+                <div class="byt-suggestions" id="byt-suggestions">
+                  <button class="suggestion-chip" data-query="What's Ian's experience?">Experience</button>
+                  <button class="suggestion-chip" data-query="What technologies does Ian use?">Tech Stack</button>
+                  <button class="suggestion-chip" data-query="Tell me about Ian's projects">Projects</button>
+                  <button class="suggestion-chip" data-query="What are Ian's achievements?">Achievements</button>
+                </div>
+                <div class="byt-input-wrapper">
+                  <input 
+                    type="text" 
+                    id="byt-input" 
+                    class="byt-input" 
+                    placeholder="Ask byt about Ian..."
+                    autocomplete="off"
+                  />
+                  <button id="byt-send" class="byt-send-btn" aria-label="Send message">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Floating particles effect -->
+            <div class="byt-particles">
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+              <div class="particle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="container">
+      <header class="section-header reveal">
+        <h2>Selected Projects</h2>
+        <p class="muted">Case studies and production systems — design, tech decisions, and impact.</p>
+      </header>
+
+        <div class="projects-intro reveal delay-1">
+          <p>My approach to building production-grade systems blends pragmatic architecture with measurable outcomes. I start with focused discovery to align on goals and constraints, then design for observability, scalability, and clear ownership. Prototypes validate trade-offs early; thorough testing, CI/CD automation, and SLO-driven monitoring ensure reliable delivery. I emphasise clear documentation and smooth handoffs so teams can operate and iterate confidently.</p>
+          <ul>
+            <li><strong>Discovery-led design:</strong> short, focused spikes to validate assumptions and reduce risk.</li>
+            <li><strong>Operational-first:</strong> telemetry, alerting, and dashboards baked in from day one.</li>
+            <li><strong>Trade-offs documented:</strong> architecture notes explaining why a technology was chosen and what was avoided.</li>
+            <li><strong>Impact metrics:</strong> examples include latency reduction, error-rate improvements, and reduced toil through automation.</li>
+          </ul>
+          <p style="margin-top:8px">Click a project to open a detailed case view — it includes architecture highlights, tech stack, lessons learned and links to demos or source.</p>
+        </div>
+
+        <div class="projects-controls reveal delay-1" role="toolbar" aria-label="Project filters">
+          <div class="filter-group" role="tablist" aria-label="Filter projects by category">
+            <button class="filter-btn active" data-filter="all" aria-pressed="true">
+              <span>All</span>
+              <span class="filter-count" data-count="all">0</span>
+            </button>
+            <button class="filter-btn" data-filter="web" aria-pressed="false">
+              <span>Web Apps</span>
+              <span class="filter-count" data-count="web">0</span>
+            </button>
+            <button class="filter-btn" data-filter="python" aria-pressed="false">
+              <span>Python</span>
+              <span class="filter-count" data-count="python">0</span>
+            </button>
+            <button class="filter-btn" data-filter="ai" aria-pressed="false">
+              <span>AI</span>
+              <span class="filter-count" data-count="ai">0</span>
+            </button>
+            <button class="filter-btn" data-filter="security" aria-pressed="false">
+              <span>Security</span>
+              <span class="filter-count" data-count="security">0</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="projects-scroll">
+          <div class="projects-glass-overlay" aria-hidden="true"></div>
+          <button class="scroll-btn left" aria-label="Scroll projects left">‹</button>
+          <div class="projects-track" tabindex="0">
+
+            <!-- NovaBoard -->
+            <article class="project-card reveal delay-1" data-category="ai web" data-project="novaboard">
+              <div class="card-media">
+                <img src="assets/images/project-novaboard.jpg" alt="NovaBoard screenshot" loading="lazy">
+                <div class="card-overlay">
+                  <button class="view-project-btn" aria-label="View NovaBoard details">View Details</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>NovaBoard</h3>
+                <p class="muted">Realtime insights dashboard that synthesizes telemetry and summarizes blockers with LLMs.</p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag" data-tech="react">React</span>
+                  <span class="tech-tag" data-tech="fastapi">FastAPI</span>
+                  <span class="tech-tag" data-tech="postgres">PostgreSQL</span>
+                  <span class="tech-tag" data-tech="redis">Redis</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank" rel="noopener">Live</a>
+                  <a href="#" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- FluxAPI -->
+            <article class="project-card reveal delay-2" data-category="python backend" data-project="fluxapi">
+              <div class="card-media">
+                <img src="assets/images/project-fluxapi.jpg" alt="FluxAPI screenshot" loading="lazy">
+                <div class="card-overlay">
+                  <button class="view-project-btn" aria-label="View FluxAPI details">View Details</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>FluxAPI</h3>
+                <p class="muted">Microservice toolkit with observability, graceful shutdown and pluggable caching.</p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag" data-tech="python">Python</span>
+                  <span class="tech-tag" data-tech="fastapi">FastAPI</span>
+                  <span class="tech-tag" data-tech="celery">Celery</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank" rel="noopener">Docs</a>
+                  <a href="#" class="project-link" target="_blank" rel="noopener">Source</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Persona -->
+            <article class="project-card reveal delay-3" data-category="web" data-project="persona">
+              <div class="card-media">
+                <img src="assets/images/project-persona.jpg" alt="Persona screenshot" loading="lazy">
+                <div class="card-overlay">
+                  <button class="view-project-btn" aria-label="View Persona details">View Details</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Persona</h3>
+                <p class="muted">Static-site generator focused on tiny bundles, SEO and progressive hydration.</p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag" data-tech="js">Vanilla JS</span>
+                  <span class="tech-tag" data-tech="scss">SCSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank" rel="noopener">Demo</a>
+                  <a href="#" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Sentra -->
+            <article class="project-card reveal delay-4" data-category="security go" data-project="sentra">
+              <div class="card-media">
+                <img src="assets/images/project-sentra.jpg" alt="Sentra screenshot" loading="lazy">
+                <div class="card-overlay">
+                  <button class="view-project-btn" aria-label="View Sentra details">View Details</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>Sentra</h3>
+                <p class="muted">Cloud-native monitoring suite that detects anomalous API behavior using ML models.</p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag" data-tech="go">Go</span>
+                  <span class="tech-tag" data-tech="kafka">Kafka</span>
+                  <span class="tech-tag" data-tech="clickhouse">ClickHouse</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank" rel="noopener">Case Study</a>
+                  <a href="#" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- AI Notes Assistant -->
+            <article class="project-card reveal delay-5" data-category="ai python" data-project="ai-notes">
+              <div class="card-media">
+                <img src="assets/images/project-persona.jpg" alt="AI Notes Assistant screenshot" loading="lazy">
+                <div class="card-overlay">
+                  <button class="view-project-btn" aria-label="View AI Notes Assistant details">View Details</button>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>AI Notes Assistant</h3>
+                <p class="muted">A Flask-based notes assistant that summarizes and organizes content using AI APIs. Designed as a productivity tool for students.</p>
+                <div class="project-tech-stack">
+                  <span class="tech-tag" data-tech="python">Python</span>
+                  <span class="tech-tag" data-tech="flask">Flask</span>
+                  <span class="tech-tag" data-tech="openai">OpenAI API</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Extra: AtlasViz -->
+            <article class="project-card reveal delay-6" data-category="web ai">
+              <div class="card-media"><img src="assets/images/project-atlasviz.jpg" alt="AtlasViz screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>AtlasViz</h3>
+                <p class="muted">Interactive data viz workspace for large telemetry datasets with streaming charts.</p>
+                <div class="project-meta">React · D3 · WebSockets</div>
+                <p class="project-links"><a href="#">Live</a> · <a href="#">GitHub</a></p>
+              </div>
+            </article>
+
+            <!-- Extra: Beacon — DevOps toolkit -->
+            <article class="project-card reveal delay-6" data-category="python">
+              <div class="card-media"><img src="assets/images/project-beacon.jpg" alt="Beacon screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Beacon</h3>
+                <p class="muted">Lightweight deployment tool with SLO tracking and auto rollback strategies.</p>
+                <div class="project-meta">Python · Kubernetes · Prometheus</div>
+                <p class="project-links"><a href="#">Docs</a> · <a href="#">Source</a></p>
+              </div>
+            </article>
+
+            <!-- Proto: Aurora -->
+            <article class="project-card reveal delay-7" data-category="web ai">
+              <div class="card-media"><img src="assets/images/project-novaboard.jpg" alt="Aurora screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Aurora</h3>
+                <p class="muted">A lightweight analytics dashboard for fleet health and anomaly detection.</p>
+                <div class="project-meta">React · Node · Redis</div>
+                <p class="project-links"><a href="#">Live</a> · <a href="#">GitHub</a></p>
+              </div>
+            </article>
+
+            <!-- Proto: Helix -->
+            <article class="project-card reveal delay-8" data-category="python backend">
+              <div class="card-media"><img src="assets/images/project-fluxapi.jpg" alt="Helix screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Helix</h3>
+                <p class="muted">Event-driven processing orchestration with backpressure and metrics.</p>
+                <div class="project-meta">Python · Kafka · Prometheus</div>
+                <p class="project-links"><a href="#">Docs</a> · <a href="#">Source</a></p>
+              </div>
+            </article>
+
+            <!-- Proto: Pulse -->
+            <article class="project-card reveal delay-9" data-category="web">
+              <div class="card-media"><img src="assets/images/project-persona.jpg" alt="Pulse screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Pulse</h3>
+                <p class="muted">Micro-interaction library and UX primitives for high-performance UIs.</p>
+                <div class="project-meta">TypeScript · CSS · Vite</div>
+                <p class="project-links"><a href="#">Demo</a> · <a href="#">GitHub</a></p>
+              </div>
+            </article>
+
+            <!-- Proto: Quasar -->
+            <article class="project-card reveal delay-10" data-category="ai">
+              <div class="card-media"><img src="assets/images/project-atlasviz.jpg" alt="Quasar screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Quasar</h3>
+                <p class="muted">Embeddable LLM agents for summarization and query over logs.</p>
+                <div class="project-meta">Python · LLMs · FastAPI</div>
+                <p class="project-links"><a href="#">Live</a> · <a href="#">GitHub</a></p>
+              </div>
+            </article>
+
+            <!-- Proto: Mercury -->
+            <article class="project-card reveal delay-11" data-category="security">
+              <div class="card-media"><img src="assets/images/project-sentra.jpg" alt="Mercury screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Mercury</h3>
+                <p class="muted">Real-time API security agent with heuristic rule sets and ML detectors.</p>
+                <div class="project-meta">Go · eBPF · ClickHouse</div>
+                <p class="project-links"><a href="#">Case Study</a> · <a href="#">GitHub</a></p>
+              </div>
+            </article>
+
+            <!-- Proto: Lumen -->
+            <article class="project-card reveal delay-12" data-category="web ai">
+              <div class="card-media"><img src="assets/images/project-atlasviz.jpg" alt="Lumen screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Lumen</h3>
+                <p class="muted">Streaming visualization widgets for large time-series datasets.</p>
+                <div class="project-meta">React · D3 · WebSockets</div>
+                <p class="project-links"><a href="#">Live</a> · <a href="#">GitHub</a></p>
+              </div>
+            </article>
+
+            <!-- Proto: Orbit -->
+            <article class="project-card reveal delay-13" data-category="python">
+              <div class="card-media"><img src="assets/images/project-beacon.jpg" alt="Orbit screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Orbit</h3>
+                <p class="muted">Deployment orchestration and canary tooling with automatic rollbacks.</p>
+                <div class="project-meta">Python · Kubernetes · Helm</div>
+                <p class="project-links"><a href="#">Docs</a> · <a href="#">Source</a></p>
+              </div>
+            </article>
+
+            <!-- Proto: Nimbus -->
+            <article class="project-card reveal delay-14" data-category="web">
+              <div class="card-media"><img src="assets/images/project-novaboard.jpg" alt="Nimbus screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Nimbus</h3>
+                <p class="muted">Collaborative whiteboard and planning workspace for product teams.</p>
+                <div class="project-meta">React · WebRTC · Redis</div>
+                <p class="project-links"><a href="#">Live</a> · <a href="#">GitHub</a></p>
+              </div>
+            </article>
+
+            <!-- Proto: Forge -->
+            <article class="project-card reveal delay-15" data-category="ai python">
+              <div class="card-media"><img src="assets/images/project-fluxapi.jpg" alt="Forge screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Forge</h3>
+                <p class="muted">Tooling for reproducible model training and deployment pipelines.</p>
+                <div class="project-meta">Python · Docker · ML</div>
+                <p class="project-links"><a href="#">Docs</a> · <a href="#">Source</a></p>
+              </div>
+            </article>
+
+            <!-- Proto: Quill -->
+            <article class="project-card reveal delay-16" data-category="web">
+              <div class="card-media"><img src="assets/images/project-persona.jpg" alt="Quill screenshot" loading="lazy"></div>
+              <div class="card-body">
+                <h3>Quill</h3>
+                <p class="muted">Documentation site generator focused on readability and fast builds.</p>
+                <div class="project-meta">Node · Markdown · Static</div>
+                <p class="project-links"><a href="#">Demo</a> · <a href="#">GitHub</a></p>
+              </div>
+            </article>
+
+          </div>
+          <div class="projects-dots" aria-hidden="false" role="tablist" aria-label="Project pages"></div>
+          <div class="projects-progress" aria-hidden="true"><div class="projects-progress__bar"></div></div>
+          <button class="scroll-btn right" aria-label="Scroll projects right">›</button>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE / TIMELINE -->
+    <section id="experience" class="container">
+      <header class="section-header reveal">
+        <h2>My Journey</h2>
+        <p class="muted">From curiosity to professional development — a timeline of growth, learning, and building.</p>
+      </header>
+
+      <div class="experience-timeline reveal delay-1">
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3>Introduction to Programming</h3>
+                <p class="timeline-company">2021</p>
+              </div>
+              <span class="timeline-date">2021</span>
+            </div>
+            <p class="timeline-description">My journey into tech began in my first year of varsity in 2020, where I was first introduced to the logic of programming through pseudocode and C#. That initial exposure sparked my curiosity — I realized I enjoyed breaking down problems and thinking through systems.</p>
+            <p class="timeline-description">By 2021, I started exploring coding more intentionally outside of coursework, experimenting with small C#, Python, and web-based projects to understand how different technologies worked together.</p>
+            <div class="timeline-tech">
+              <span class="tech-badge">C#</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Web Development</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3>Building the Foundations</h3>
+                <p class="timeline-company">2022</p>
+              </div>
+              <span class="timeline-date">2022</span>
+            </div>
+            <p class="timeline-description">I dove deeper into programming fundamentals — working with Python and JavaScript while learning how to structure and debug real applications. I spent this time building basic web pages, understanding responsive layouts, and exploring how to make them interactive using JavaScript.</p>
+            <p class="timeline-description">This period laid the foundation for everything that came later — problem-solving, version control, and learning to think like a developer.</p>
+            <div class="timeline-tech">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">HTML/CSS</span>
+              <span class="tech-badge">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3>Transition into Full-Stack Development</h3>
+                <p class="timeline-company">2023</p>
+              </div>
+              <span class="timeline-date">2023</span>
+            </div>
+            <p class="timeline-description">My focus shifted toward the bigger picture of how front-end and back-end systems connect. I began experimenting with frameworks like React and Express, building small full-stack applications that used APIs and databases.</p>
+            <p class="timeline-description">During this time, I developed a deeper appreciation for scalability, clean architecture, and writing code that's both maintainable and functional. It's when I really started identifying as a full-stack developer.</p>
+            <div class="timeline-tech">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Express</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">APIs</span>
+              <span class="tech-badge">Databases</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3>Expanding Horizons</h3>
+                <p class="timeline-company">2024</p>
+              </div>
+              <span class="timeline-date">2024</span>
+            </div>
+            <p class="timeline-description">By 2024, I had become comfortable building end-to-end projects and started exploring more advanced technologies like TypeScript, Docker, and cloud deployment tools.</p>
+            <p class="timeline-description">I worked on several side projects — experimenting with authentication systems, AI integrations, and automation scripts — refining both my technical ability and design sensibility.</p>
+            <p class="timeline-description">I also began sharing and collaborating more, contributing to small open-source repositories and improving code quality through peer feedback.</p>
+            <div class="timeline-tech">
+              <span class="tech-badge">TypeScript</span>
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">Cloud Deployment</span>
+              <span class="tech-badge">AI Integration</span>
+              <span class="tech-badge">Open Source</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3>Professional & Freelance Work</h3>
+                <p class="timeline-company">2025 — Present</p>
+              </div>
+              <span class="timeline-date">2025 — Present</span>
+            </div>
+            <p class="timeline-description">I'm now focused on building polished, real-world applications and refining my ability to deliver complete solutions — from concept to deployment.</p>
+            <p class="timeline-description">My work involves both front-end and back-end problem-solving, creating clean interfaces, efficient APIs, and smooth deployment pipelines.</p>
+            <p class="timeline-description">I'm constantly improving my workflow, experimenting with modern technologies, and working toward larger-scale, collaborative projects that blend creativity with engineering.</p>
+            <div class="timeline-tech">
+              <span class="tech-badge">Full-Stack</span>
+              <span class="tech-badge">APIs</span>
+              <span class="tech-badge">Deployment</span>
+              <span class="tech-badge">Modern Technologies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-closing reveal delay-2" style="max-width: 900px; margin: 48px auto 0; text-align: center; padding: 24px; background: rgba(79, 70, 229, 0.04); border-left: 4px solid var(--accent); border-radius: 8px; font-style: italic; font-size: 1.05rem; line-height: 1.8; color: var(--text);">
+        Every project I build is another step toward mastering the craft — not just of writing code, but of creating software that feels thoughtful, reliable, and human.
+      </div>
+
+      <div class="experience-tools reveal delay-2">
+        <h3>Tools & Platforms</h3>
+        <div class="tools-grid">
+          <div class="tool-category">
+            <h4>Languages & Frameworks</h4>
+            <div class="tool-tags">
+              <span>TypeScript</span>
+              <span>JavaScript</span>
+              <span>Python</span>
+              <span>Go</span>
+              <span>Java</span>
+              <span>C#</span>
+              <span>C</span>
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Node.js</span>
+              <span>FastAPI</span>
+              <span>Express.js</span>
+              <span>.NET</span>
+              <span>Spring</span>
+              <span>ASP.NET</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Databases</h4>
+            <div class="tool-tags">
+              <span>PostgreSQL</span>
+              <span>MongoDB</span>
+              <span>Redis</span>
+              <span>ClickHouse</span>
+              <span>Elasticsearch</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Infrastructure</h4>
+            <div class="tool-tags">
+              <span>Docker</span>
+              <span>Kubernetes</span>
+              <span>Terraform</span>
+              <span>Pulumi</span>
+              <span>Helm</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Cloud Platforms</h4>
+            <div class="tool-tags">
+              <span>AWS (ECS, Lambda, RDS, S3)</span>
+              <span>GCP</span>
+              <span>Azure</span>
+              <span>Vercel</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Message Queues & Streaming</h4>
+            <div class="tool-tags">
+              <span>Kafka</span>
+              <span>RabbitMQ</span>
+              <span>Celery</span>
+              <span>Redis Pub/Sub</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Observability</h4>
+            <div class="tool-tags">
+              <span>Prometheus</span>
+              <span>Grafana</span>
+              <span>Datadog</span>
+              <span>New Relic</span>
+              <span>OpenTelemetry</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>CI/CD & DevOps</h4>
+            <div class="tool-tags">
+              <span>GitHub Actions</span>
+              <span>GitLab CI</span>
+              <span>Jenkins</span>
+              <span>CircleCI</span>
+              <span>Git</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>ML & AI</h4>
+            <div class="tool-tags">
+              <span>TensorFlow</span>
+              <span>PyTorch</span>
+              <span>Pandas</span>
+              <span>Jupyter</span>
+              <span>LLM APIs</span>
+              <span>OpenAI API</span>
+              <span>AI/ML Tools</span>
+            </div>
+          </div>
+          <div class="tool-category">
+            <h4>Creative & Design</h4>
+            <div class="tool-tags">
+              <span>Photoshop</span>
+              <span>Video Editing</span>
+              <span>Adobe Creative Suite</span>
+              <span>Premiere Pro</span>
+              <span>After Effects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="project-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-container">
+        <button class="modal-close" aria-label="Close modal">✕</button>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 id="modal-title" class="modal-title"></h2>
+            <p class="modal-subtitle"></p>
+          </div>
+          
+          <div class="modal-body">
+            <div class="modal-gallery">
+              <div class="gallery-main">
+                <img id="modal-main-image" src="" alt="" loading="lazy">
+              </div>
+              <div class="gallery-thumbnails" id="modal-thumbnails"></div>
+            </div>
+            
+            <div class="modal-details">
+              <div class="modal-description">
+                <h3>About</h3>
+                <p id="modal-description"></p>
+              </div>
+              
+              <div class="modal-tech">
+                <h3>Tech Stack</h3>
+                <div class="modal-tech-stack" id="modal-tech-stack"></div>
+              </div>
+              
+              <div class="modal-features">
+                <h3>Key Features</h3>
+                <ul id="modal-features"></ul>
+              </div>
+              
+              <div class="modal-links">
+                <a id="modal-live-link" href="#" class="btn btn-primary" target="_blank" rel="noopener" style="display: none;">
+                  <span>View Live</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                </a>
+                <a id="modal-github-link" href="#" class="btn btn-secondary" target="_blank" rel="noopener" style="display: none;">
+                  <span>GitHub</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a id="modal-docs-link" href="#" class="btn btn-secondary" target="_blank" rel="noopener" style="display: none;">
+                  <span>Documentation</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="container">
+      <header class="section-header reveal">
+        <h2>Skills & Technologies</h2>
+        <p class="muted">Technical capabilities across the full stack — with proficiency levels and experience.</p>
+      </header>
+
+      <!-- Icon Grid by Category -->
+      <div class="skills-categories reveal delay-1">
+        <!-- Frontend -->
+        <div class="skill-category">
+          <h3 class="category-title">Frontend</h3>
+          <div class="skills-icon-grid">
+            <div class="skill-icon-item" data-skill="React" data-proficiency="85" data-experience="5+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.83 1.7-3.087 3.874-3.565 5.132-.477 1.258-.477 2.178-.174 2.803.642 1.3 2.415 2.16 4.17 2.16.31 0 .618-.015.924-.045-.23-.464-.48-.935-.748-1.405-.99.03-1.93.03-2.78-.03.477-1.1 1.38-2.5 2.558-3.96 1.32-1.56 2.75-2.76 3.9-3.33.64-.31 1.18-.39 1.52-.2.3.17.45.6.45 1.27 0 .66-.15 1.44-.45 2.31-.3.87-.75 1.84-1.35 2.88l-.01.02c-.6 1.04-1.35 2.1-2.23 3.15-.88 1.05-1.86 2.05-2.91 2.95l2.87 4.98c.18-.05.36-.1.55-.15 1.8-.45 3.84-.6 5.76-.45 1.92.15 3.75.6 5.1 1.35 1.35.75 2.25 1.8 2.55 3 .3 1.2 0 2.55-.9 4.05l-.01.01c-.9 1.5-2.25 3.15-3.9 4.8-1.65 1.65-3.6 3.15-5.55 4.35-1.95 1.2-3.9 2.1-5.7 2.7-1.8.6-3.45.9-4.95.9-1.5 0-2.85-.3-4.05-.9-1.2-.6-2.1-1.5-2.7-2.7-.6-1.2-.9-2.55-.9-4.05 0-1.5.3-3 .9-4.5.6-1.5 1.5-3 2.7-4.35 1.2-1.35 2.7-2.55 4.35-3.6 1.65-1.05 3.45-1.95 5.25-2.7 1.8-.75 3.6-1.35 5.4-1.8 1.8-.45 3.6-.75 5.4-.9z"/></svg>
+              </div>
+              <span class="skill-name">React</span>
+            </div>
+            <div class="skill-icon-item" data-skill="TypeScript" data-proficiency="88" data-experience="4+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 4.148 4.148 0 0 1-1.256-.493v-2.63a5.5 5.5 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444c-.304-.15-.671-.304-1.103-.464-.43-.16-.863-.343-1.29-.55-.425-.206-.8-.449-1.123-.728a3.388 3.388 0 0 1-.763-1.016 2.987 2.987 0 0 1-.268-1.306c0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 5.782 5.782 0 0 1 1.77-.268zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg>
+              </div>
+              <span class="skill-name">TypeScript</span>
+            </div>
+            <div class="skill-icon-item" data-skill="Next.js" data-proficiency="82" data-experience="3+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.5714 0L1 5.25V18.75L11.5714 24L22.1429 18.75V5.25L11.5714 0ZM20.1429 17.3214L11.5714 21.5357L3 17.3214V6.67857L11.5714 2.46429L20.1429 6.67857V17.3214ZM16.7143 7.92857L11.5714 5.25L6.42857 7.92857V16.0714L11.5714 18.75L16.7143 16.0714V7.92857Z"/></svg>
+              </div>
+              <span class="skill-name">Next.js</span>
+            </div>
+            <div class="skill-icon-item" data-skill="Tailwind CSS" data-proficiency="90" data-experience="4+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.31.74 1.91 1.35.98 1 2.12 2.15 4.59 2.15 2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.31-.74-1.91-1.35C15.61 7.15 14.49 6 12 6zm-5 6c-2.67 0-4.33 1.33-5 4 1-1.33 2.17-1.83 3.5-1.5.76.19 1.31.74 1.91 1.35C8.39 17.85 9.51 19 12 19c2.67 0 4.33-1.33 5-4-1 1.33-2.17 1.83-3.5 1.5-.76-.19-1.31-.74-1.91-1.35C12.61 13.15 11.49 12 7 12z"/></svg>
+              </div>
+              <span class="skill-name">Tailwind</span>
+            </div>
+            <div class="skill-icon-item" data-skill="HTML5" data-proficiency="95" data-experience="7+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622h10.125l.255 2.716h-6.64l.24 2.573h6.182l.366 3.523-3.091.83-3.091-.83-.26-2.716H6.64l-.24 2.573 6.115 1.695 6.115-1.695.366-4.41H5.41l-.213-2.622h13.46l.255-2.716z"/></svg>
+              </div>
+              <span class="skill-name">HTML5</span>
+            </div>
+            <div class="skill-icon-item" data-skill="CSS3" data-proficiency="92" data-experience="7+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622h10.125l.255 2.716h-6.64l.24 2.573h6.182l.366 3.523-3.091.83-3.091-.83-.26-2.716H6.64l-.24 2.573 6.115 1.695 6.115-1.695.366-4.41H5.41l-.213-2.622h13.46l.255-2.716z"/></svg>
+              </div>
+              <span class="skill-name">CSS3</span>
+            </div>
+            <div class="skill-icon-item" data-skill="JavaScript" data-proficiency="90" data-experience="7+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.036c.305 1.316.75 2.25 1.324 2.712 1.011.9 2.91 1.17 4.474 1.05l.234-.033c1.35-.195 2.376-.96 2.673-1.86.12-.36.12-.705.12-1.125v-7.488h-2.248v-.02z"/></svg>
+              </div>
+              <span class="skill-name">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category">
+          <h3 class="category-title">Backend</h3>
+          <div class="skills-icon-grid">
+            <div class="skill-icon-item" data-skill="Node.js" data-proficiency="88" data-experience="6+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392 c1.307,0.654,2.104-0.116,2.104-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-1.984-0.551L2.28,19.396c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.570,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.265-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z M19.099,13.993 c0-1.9-1.284-2.406-3.987-2.763c-2.731-0.361-3.009-0.548-3.009-1.187c0-0.528,0.235-1.233,2.258-1.233 c1.807,0,2.473,0.389,2.747,1.607c0.024,0.115,0.129,0.199,0.247,0.199h1.141c0.071,0,0.138-0.031,0.186-0.081 c0.048-0.054,0.074-0.123,0.067-0.196c-0.177-2.243-1.603-3.465-4.494-3.465c-2.804,0-4.252,1.185-4.252,3.206 c0,1.901,1.446,2.445,3.833,2.713c2.727,0.361,3.188,0.703,3.188,1.222c0,0.774-0.42,1.237-2.532,1.237 c-2.239,0-2.915-0.494-3.243-1.747c-0.027-0.104-0.121-0.178-0.231-0.178h-1.137c-0.141,0-0.254,0.114-0.254,0.253 c0,0.389,0.217,2.546,3.586,3.274c1.317,0.285,2.532,0.416,3.721,0.416c2.351,0,3.999-0.627,4.841-1.908 c0.487-0.744,0.65-1.698,0.65-2.892H19.099z"/></svg>
+              </div>
+              <span class="skill-name">Node.js</span>
+            </div>
+            <div class="skill-icon-item" data-skill="Python" data-proficiency="92" data-experience="7+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.38 0c-.053.012-.12.024-.18.048-.48.12-.84.36-1.2.72-.36.36-.6.72-.72 1.2-.024.06-.036.127-.048.18H9.6c-.6 0-1.2.6-1.2 1.2v1.2H4.8c-1.2 0-2.4 1.2-2.4 2.4v2.4c0 .6.6 1.2 1.2 1.2h1.2v-1.2c0-.6.6-1.2 1.2-1.2h7.2c.6 0 1.2-.6 1.2-1.2V4.8c0-.6-.6-1.2-1.2-1.2h-1.2V2.4c0-.6.6-1.2 1.2-1.2h2.4c.6 0 1.2.6 1.2 1.2v1.2h1.2c.6 0 1.2.6 1.2 1.2v2.4c0 .6-.6 1.2-1.2 1.2h-1.2v1.2c0 .6-.6 1.2-1.2 1.2H9.6c-.6 0-1.2.6-1.2 1.2v7.2c0 .6.6 1.2 1.2 1.2h1.2v1.2c0 1.2-1.2 2.4-2.4 2.4H5.4c-1.2 0-2.4-1.2-2.4-2.4v-2.4c0-.6.6-1.2 1.2-1.2h1.2v-1.2c0-1.2 1.2-2.4 2.4-2.4h7.2c1.2 0 2.4 1.2 2.4 2.4v7.2c0 1.2-1.2 2.4-2.4 2.4h-2.4c-.6 0-1.2-.6-1.2-1.2v-1.2H9.6c-1.2 0-2.4-1.2-2.4-2.4V9.6c0-1.2 1.2-2.4 2.4-2.4h7.2c1.2 0 2.4 1.2 2.4 2.4v2.4c0 .6-.6 1.2-1.2 1.2h-1.2v1.2c0 .6.6 1.2 1.2 1.2h2.4c1.2 0 2.4 1.2 2.4 2.4v2.4c0 1.2-1.2 2.4-2.4 2.4h-2.4c-1.2 0-2.4-1.2-2.4-2.4v-1.2h-1.2c-1.2 0-2.4-1.2-2.4-2.4V9.6c0-1.2-1.2-2.4-2.4-2.4z"/></svg>
+              </div>
+              <span class="skill-name">Python</span>
+            </div>
+            <div class="skill-icon-item" data-skill="FastAPI" data-proficiency="90" data-experience="4+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 8.16c.169.169.169.443 0 .612L13.452 12l4.116 4.228c.169.169.169.443 0 .612l-1.104 1.104c-.169.169-.443.169-.612 0L11.328 12.612c-.169-.169-.443-.169-.612 0L6.148 17.944c-.169.169-.443.169-.612 0l-1.104-1.104c-.169-.169-.169-.443 0-.612L8.548 12 4.432 7.772c-.169-.169-.169-.443 0-.612l1.104-1.104c.169-.169.443-.169.612 0L10.672 11.388c.169.169.443.169.612 0L15.852 6.056c.169-.169.443-.169.612 0l1.104 1.104z"/></svg>
+              </div>
+              <span class="skill-name">FastAPI</span>
+            </div>
+            <div class="skill-icon-item" data-skill="Go" data-proficiency="75" data-experience="3+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.373 18.897c1.512 0 2.746-1.235 2.746-2.746s-1.234-2.746-2.746-2.746-2.746 1.235-2.746 2.746 1.234 2.746 2.746 2.746zm-1.183-2.746c0-.65.533-1.183 1.183-1.183s1.183.533 1.183 1.183-.533 1.183-1.183 1.183-1.183-.533-1.183-1.183zm5.038-1.183c.65 0 1.183.533 1.183 1.183s-.533 1.183-1.183 1.183-1.183-.533-1.183-1.183.533-1.183 1.183-1.183zm-1.183 1.183c0-.65.533-1.183 1.183-1.183s1.183.533 1.183 1.183-.533 1.183-1.183 1.183-1.183-.533-1.183-1.183zm-2.672 0c.65 0 1.183.533 1.183 1.183s-.533 1.183-1.183 1.183-1.183-.533-1.183-1.183.533-1.183 1.183-1.183zm-1.183 1.183c0-.65.533-1.183 1.183-1.183s1.183.533 1.183 1.183-.533 1.183-1.183 1.183-1.183-.533-1.183-1.183zm-2.672 0c.65 0 1.183.533 1.183 1.183s-.533 1.183-1.183 1.183-1.183-.533-1.183-1.183.533-1.183 1.183-1.183zm-1.183 1.183c0-.65.533-1.183 1.183-1.183s1.183.533 1.183 1.183-.533 1.183-1.183 1.183-1.183-.533-1.183-1.183z"/></svg>
+              </div>
+              <span class="skill-name">Go</span>
+            </div>
+            <div class="skill-icon-item" data-skill="Express.js" data-proficiency="85" data-experience="5+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 18.588a5.554 5.554 0 0 1-1.65.387c.705-.423 1.165-1.093 1.404-1.89l-1.33-1.008c-.225.75-.563 1.404-1.125 1.875-.563.47-1.237.705-2.025.705-.75 0-1.406-.188-1.97-.563a3.39 3.39 0 0 1-1.406-1.593c-.338-.675-.506-1.462-.506-2.362 0-.9.188-1.688.563-2.363a3.39 3.39 0 0 1 1.593-1.406c.563-.375 1.22-.563 1.97-.563.788 0 1.463.235 2.025.705.563.47.9 1.125 1.125 1.875l1.33-1.008c-.24-.797-.698-1.467-1.405-1.89a5.554 5.554 0 0 1 1.65-.387V0h-2.25v2.25c-.75 0-1.406.188-1.97.563a3.39 3.39 0 0 1-1.406 1.593c-.338.675-.506 1.462-.506 2.362 0 .9.188 1.688.563 2.363a3.39 3.39 0 0 1 1.593 1.406c.563.375 1.22.563 1.97.563V24H24v-5.412zM0 18.588V24h2.25v-2.25c.75 0 1.406-.188 1.97-.563a3.39 3.39 0 0 1 1.406-1.593c.338-.675.506-1.462.506-2.362 0-.9-.188-1.688-.563-2.363a3.39 3.39 0 0 0-1.593-1.406c-.563-.375-1.22-.563-1.97-.563V0H0v5.412a5.554 5.554 0 0 1 1.65.387c-.705.423-1.165 1.093-1.404 1.89l1.33 1.008c.225-.75.563-1.404 1.125-1.875.563-.47 1.237-.705 2.025-.705.75 0 1.406.188 1.97.563a3.39 3.39 0 0 1 1.406 1.593c.338.675.506 1.462.506 2.362 0 .9-.188 1.688-.563 2.363a3.39 3.39 0 0 1-1.593 1.406c-.563.375-1.22.563-1.97.563v2.25H0z"/></svg>
+              </div>
+              <span class="skill-name">Express</span>
+            </div>
+            <div class="skill-icon-item" data-skill="REST APIs" data-proficiency="92" data-experience="6+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/></svg>
+              </div>
+              <span class="skill-name">REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-category">
+          <h3 class="category-title">Database</h3>
+          <div class="skills-icon-grid">
+            <div class="skill-icon-item" data-skill="PostgreSQL" data-proficiency="88" data-experience="6+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5594 15.5333C23.4701 15.8084 23.2769 16.0356 23.0211 16.1692C22.7653 16.3028 22.4671 16.3333 22.1919 16.2539L18.1826 15.1289C17.9075 15.0495 17.6803 14.8563 17.5467 14.6005C17.4131 14.3447 17.3826 14.0465 17.462 13.7714L18.587 9.76211C18.6664 9.48696 18.8596 9.25977 19.1154 9.12617C19.3712 8.99257 19.6694 8.96211 19.9445 9.04151L23.9538 10.1665C24.2289 10.2459 24.4561 10.4391 24.5897 10.6949C24.7233 10.9507 24.7538 11.2489 24.6744 11.524L23.5594 15.5333Z"/><path d="M12.0445 2.1665C11.7694 2.2459 11.5422 2.4391 11.4086 2.6949C11.275 2.9507 11.2445 3.2489 11.324 3.524L12.449 7.5333C12.5284 7.8084 12.7216 8.0356 12.9774 8.1692C13.2332 8.3028 13.5314 8.3333 13.8065 8.2539L17.8158 7.1289C18.0909 7.0495 18.3181 6.8563 18.4517 6.6005C18.5853 6.3447 18.6158 6.0465 18.5364 5.7714L17.4114 1.76211C17.332 1.48696 17.1388 1.25977 16.883 1.12617C16.6272 0.99257 16.329 0.96211 16.0539 1.04151L12.0445 2.1665Z"/><path d="M1.324 3.524C1.2445 3.2489 1.275 2.9507 1.4086 2.6949C1.5422 2.4391 1.7694 2.2459 2.0445 2.1665L6.0539 1.04151C6.329 0.96211 6.6272 0.99257 6.883 1.12617C7.1388 1.25977 7.332 1.48696 7.4114 1.76211L8.5364 5.7714C8.6158 6.0465 8.5853 6.3447 8.4517 6.6005C8.3181 6.8563 8.0909 7.0495 7.8158 7.1289L3.8065 8.2539C3.5314 8.3333 3.2332 8.3028 2.9774 8.1692C2.7216 8.0356 2.5284 7.8084 2.449 7.5333L1.324 3.524Z"/><path d="M1.324 20.476C1.2445 20.7511 1.275 21.0493 1.4086 21.3051C1.5422 21.5609 1.7694 21.7541 2.0445 21.8335L6.0539 22.9585C6.329 23.0379 6.6272 23.0074 6.883 22.8738C7.1388 22.7402 7.332 22.513 7.4114 22.2379L8.5364 18.2286C8.6158 17.9535 8.5853 17.6553 8.4517 17.3995C8.3181 17.1437 8.0909 16.9505 7.8158 16.8711L3.8065 15.7461C3.5314 15.6667 3.2332 15.6972 2.9774 15.8308C2.7216 15.9644 2.5284 16.1916 2.449 16.4667L1.324 20.476Z"/><path d="M12.0445 21.8335C11.7694 21.7541 11.5422 21.5609 11.4086 21.3051C11.275 21.0493 11.2445 20.7511 11.324 20.476L12.449 16.4667C12.5284 16.1916 12.7216 15.9644 12.9774 15.8308C13.2332 15.6972 13.5314 15.6667 13.8065 15.7461L17.8158 16.8711C18.0909 16.9505 18.3181 17.1437 18.4517 17.3995C18.5853 17.6553 18.6158 17.9535 18.5364 18.2286L17.4114 22.2379C17.332 22.513 17.1388 22.7402 16.883 22.8738C16.6272 23.0074 16.329 23.0379 16.0539 22.9585L12.0445 21.8335Z"/></svg>
+              </div>
+              <span class="skill-name">PostgreSQL</span>
+            </div>
+            <div class="skill-icon-item" data-skill="MongoDB" data-proficiency="80" data-experience="5+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0 1 11.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296 1.196-.84 1.196-1.54 0-.294-.22-.528-.412-.736-.28-.308-.53-.59-.53-1.177 0-.624.396-.89.702-1.298.443-.58.702-1.19.702-1.893a3.78 3.78 0 0 0-.702-2.13zm-5.336 8.49s0-8.9-2.148-11.55c-.212-.243-.376-.53-.376-.908 0-.728.607-1.133 1.238-1.807.393-.412.607-1.096.607-1.53 0-.302-.188-.58-.452-.767a4.936 4.936 0 0 1 .51-1.7c.305.13.607.27.877.435.344.22.707.48.96.78.11.14.19.29.246.45a4.09 4.09 0 0 1 .11.95c.01.13.02.26.03.39.15 1.58.33 3.15.52 4.71.19 1.56.38 3.1.58 4.65.2 1.55.4 3.1.6 4.65.2 1.55.4 3.1.6 4.65.2 1.55.38 3.1.58 4.65.19 1.56.37 3.12.52 4.71.01.13.02.26.03.39.04.32.08.64.11.95.06.16.14.31.246.45.253.3.616.56.96.78.27.165.573.305.877.435a4.936 4.936 0 0 1-.51-1.7c-.264-.187-.452-.465-.452-.767 0-.434.214-1.118.607-1.53.631-.674 1.238-1.079 1.238-1.807 0-.378-.164-.665-.376-.908-2.148-2.65-2.148-11.55-2.148-11.55z"/></svg>
+              </div>
+              <span class="skill-name">MongoDB</span>
+            </div>
+            <div class="skill-icon-item" data-skill="Redis" data-proficiency="85" data-experience="5+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.429 11.99c-1.497-1.46-3.51-2.16-5.78-2.16-.65 0-1.29.07-1.9.2-.78-2.36-2.77-4.25-5.2-5.05-.5-2.55-2.67-4.5-5.3-4.5-2.97 0-5.38 2.41-5.38 5.38 0 .96.25 1.86.69 2.64C.55 9.5 0 10.68 0 12c0 2.21 1.79 4 4 4h.05c.35.77.85 1.45 1.48 2.01C4.5 19.5 5.5 20 6.5 20c.5 0 1-.1 1.45-.3.9.6 1.95.95 3.05.95 1.22 0 2.36-.42 3.26-1.12.45.2.95.3 1.45.3 1 0 2-.5 2.97-1.49.63-.56 1.13-1.24 1.48-2.01H20c2.21 0 4-1.79 4-4 0-1.32-.55-2.5-1.43-3.35.44-.78.69-1.68.69-2.64 0-2.97-2.41-5.38-5.38-5.38-2.63 0-4.8 1.95-5.3 4.5-2.43.8-4.42 2.69-5.2 5.05-.61-.13-1.25-.2-1.9-.2-2.27 0-4.28.7-5.78 2.16C.55 9.5 0 10.68 0 12c0 2.21 1.79 4 4 4h.05c.35.77.85 1.45 1.48 2.01C4.5 19.5 5.5 20 6.5 20c.5 0 1-.1 1.45-.3.9.6 1.95.95 3.05.95 1.22 0 2.36-.42 3.26-1.12.45.2.95.3 1.45.3 1 0 2-.5 2.97-1.49.63-.56 1.13-1.24 1.48-2.01H20c2.21 0 4-1.79 4-4 0-1.32-.55-2.5-1.43-3.35z"/></svg>
+              </div>
+              <span class="skill-name">Redis</span>
+            </div>
+            <div class="skill-icon-item" data-skill="Elasticsearch" data-proficiency="75" data-experience="3+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/></svg>
+              </div>
+              <span class="skill-name">Elasticsearch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="skill-category">
+          <h3 class="category-title">DevOps & Tools</h3>
+          <div class="skills-icon-grid">
+            <div class="skill-icon-item" data-skill="Docker" data-proficiency="88" data-experience="5+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.983 10.808c-.181-1.744-1.523-3.156-3.272-3.156-.05 0-.1.002-.15.004l-.15.008c-.1.002-.2.003-.302.003h-.402c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1-.05 0-.1 0-.15-.002l-.15-.003c-.1-.002-.2-.003-.3-.003h-.4c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1-.05 0-.1 0-.15-.002l-.15-.003c-.1-.002-.2-.003-.3-.003h-.4c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1-.05 0-.1 0-.15-.002l-.15-.003c-.1-.002-.2-.003-.3-.003h-.4c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1-.05 0-.1 0-.15-.002l-.15-.003c-.1-.002-.2-.003-.3-.003h-.4c-1.15 0-2.102-.86-2.253-1.996l-.01-.05-.01-.05c-.05-.3-.05-.6-.05-.9 0-1.2.9-2.1 2.1-2.1.05 0 .1 0 .15.002l.15.003c.1.002.2.003.3.003h.4c1.15 0 2.102.86 2.253 1.996l.01.05.01.05c.05.3.05.6.05.9 0 1.2-.9 2.1-2.1 2.1z"/></svg>
+              </div>
+              <span class="skill-name">Docker</span>
+            </div>
+            <div class="skill-icon-item" data-skill="Kubernetes" data-proficiency="82" data-experience="4+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L1.608 6v12L12 24l10.392-6V6L12 0zm7.392 16.242L12 21l-7.392-4.758V7.758L12 3l7.392 4.758v8.484z"/></svg>
+              </div>
+              <span class="skill-name">Kubernetes</span>
+            </div>
+            <div class="skill-icon-item" data-skill="Git" data-proficiency="90" data-experience="7+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.44.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.083 1.903.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.72-.719-.72-1.879 0-2.598.177-.178.383-.313.602-.408v-6.41c-.219-.095-.425-.23-.602-.409-.72-.719-1.88-.719-2.599 0-.721.72-.721 1.88 0 2.599.146.145.312.262.488.348v6.414c-.176.086-.342-.203-.488.348-.72.722-1.884.722-2.604 0-.719-.72-.719-1.881 0-2.6.72-.72 1.881-.72 2.6 0 .147.146.313.262.49.348v-6.415c.177-.086.343-.202.49-.348.719-.72.719-1.88 0-2.599-.72-.72-1.88-.72-2.599 0-.147.146-.313.262-.49.348L5.536 3.866 1.35 8.052c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
+              </div>
+              <span class="skill-name">Git</span>
+            </div>
+            <div class="skill-icon-item" data-skill="AWS" data-proficiency="85" data-experience="5+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.8 21.2l-1.4-3.5h-.7v3.5H2.4V13h2.7c1.3 0 2.1.7 2.1 1.8 0 .8-.5 1.4-1.2 1.7l1.5 3.7h-1.7zm-1.1-5.2h-1v1.8h1c.6 0 .9-.3.9-.9s-.3-.9-.9-.9zm8.1 5.2l-2.1-6.4h1.6l1.6 4.8 1.6-4.8h1.6l-2.1 6.4h-1.2zm7.1-1.2c-.3.2-.7.3-1.1.3-.4 0-.6-.1-.6-.4 0-.2.2-.3.5-.3h.6c.3 0 .6-.1.8-.3.2-.2.3-.5.3-.9 0-.7-.5-1.2-1.3-1.2-.5 0-1 .2-1.3.5l.9.9c.1-.1.3-.2.5-.2.2 0 .3.1.3.3 0 .2-.1.3-.4.3h-.6c-.3 0-.6.1-.8.3-.2.2-.3.5-.3.9 0 .7.5 1.2 1.3 1.2.6 0 1.1-.2 1.4-.5l-.9-.9zm3.1.2h-2.3v-1.2h2.1v-.9h-2.1v-1h2.3V13h2.8v6.2h-2.8v-1.2z"/></svg>
+              </div>
+              <span class="skill-name">AWS</span>
+            </div>
+            <div class="skill-icon-item" data-skill="CI/CD" data-proficiency="88" data-experience="5+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/></svg>
+              </div>
+              <span class="skill-name">CI/CD</span>
+            </div>
+            <div class="skill-icon-item" data-skill="Terraform" data-proficiency="80" data-experience="4+ years">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/></svg>
+              </div>
+              <span class="skill-name">Terraform</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Bars Section -->
+      <div class="skills-bars reveal delay-2">
+        <h3 class="bars-title">Proficiency Levels</h3>
+        <div class="skill-bars-grid">
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">React & TypeScript</span>
+              <span class="skill-bar-percent">85%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Python & FastAPI</span>
+              <span class="skill-bar-percent">92%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="92"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Node.js & Express</span>
+              <span class="skill-bar-percent">88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="88"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">PostgreSQL</span>
+              <span class="skill-bar-percent">88%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="88"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Docker & Kubernetes</span>
+              <span class="skill-bar-percent">85%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">AWS Cloud</span>
+              <span class="skill-bar-percent">85%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Go</span>
+              <span class="skill-bar-percent">75%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="75"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">ML & LLM Integration</span>
+              <span class="skill-bar-percent">70%</span>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="70"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="container">
+      <header class="section-header reveal">
+        <h2>What People Say</h2>
+        <p class="muted">Recommendations from colleagues and collaborators — real feedback from real projects.</p>
+      </header>
+
+      <div class="testimonials-grid reveal delay-1">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="testimonial-author">
+              <h4>Sarah Chen</h4>
+              <p class="testimonial-role">Product Lead</p>
+              <p class="testimonial-company">Nimbus Labs</p>
+            </div>
+            <div class="testimonial-rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+          <blockquote class="testimonial-quote">
+            <p>"Ian transformed our telemetry pipeline — latency dropped 3x and our engineers can iterate faster. Technical and pragmatic, with a focus on real-world impact."</p>
+          </blockquote>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="testimonial-author">
+              <h4>Marcus Rodriguez</h4>
+              <p class="testimonial-role">CTO</p>
+              <p class="testimonial-company">AtlasWorks</p>
+            </div>
+            <div class="testimonial-rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+          <blockquote class="testimonial-quote">
+            <p>"A thoughtful engineer who balances code quality with shipping features. The microservice toolkit is a game changer — production-ready patterns that save weeks of development time."</p>
+          </blockquote>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <div class="testimonial-author">
+              <h4>Alex Kim</h4>
+              <p class="testimonial-role">Engineering Manager</p>
+              <p class="testimonial-company">Open Source Contributor</p>
+            </div>
+            <div class="testimonial-rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+          </div>
+          <blockquote class="testimonial-quote">
+            <p>"Exceptional problem-solving skills and deep technical knowledge. Ian's contributions to our OSS projects have been invaluable — clean code, thorough documentation, and always willing to help."</p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+      <header class="section-header reveal">
+        <h2>Let's Work Together</h2>
+        <p class="muted">I'm always open to collaborations, freelance projects, or full-time opportunities. Let's connect!</p>
+      </header>
+
+      <div class="contact-wrapper reveal delay-1">
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <form id="contact-form" class="contact-form" novalidate>
+            <div id="form-status" class="form-status" aria-live="polite" role="status"></div>
+
+            <div class="form-group">
+              <label for="name">Name <span class="required">*</span></label>
+              <input 
+                id="name" 
+                name="name" 
+                type="text" 
+                required 
+                placeholder="Your name"
+                autocomplete="name"
+              >
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input 
+                id="email" 
+                name="email" 
+                type="email" 
+                required 
+                placeholder="you@company.com"
+                autocomplete="email"
+              >
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input 
+                id="subject" 
+                name="subject" 
+                type="text" 
+                placeholder="What's this about?"
+                autocomplete="off"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span class="required">*</span></label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="6" 
+                required 
+                placeholder="Tell me about your project or idea..."
+              ></textarea>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+              <button class="btn btn-secondary" type="reset">Clear</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Methods -->
+        <div class="contact-methods">
+          <div class="contact-methods-card">
+            <h3>Get in Touch</h3>
+            <p class="contact-intro">Prefer to reach out directly? Use any of these methods:</p>
+
+            <div class="contact-methods-list">
+              <a href="mailto:ianhnk01@gmail.com" class="contact-method-item">
+                <div class="contact-icon email-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-method-info">
+                  <span class="contact-method-label">Email</span>
+                  <span class="contact-method-value">ianhnk01@gmail.com</span>
+                </div>
+                <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <a href="https://www.linkedin.com/in/ianhnk" target="_blank" rel="noopener" class="contact-method-item">
+                <div class="contact-icon linkedin-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </div>
+                <div class="contact-method-info">
+                  <span class="contact-method-label">LinkedIn</span>
+                  <span class="contact-method-value">linkedin.com/in/ianhnk</span>
+                </div>
+                <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <a href="https://github.com/ihnk-dbg" target="_blank" rel="noopener" class="contact-method-item">
+                <div class="contact-icon github-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </div>
+                <div class="contact-method-info">
+                  <span class="contact-method-label">GitHub</span>
+                  <span class="contact-method-value">github.com/ihnk-dbg</span>
+                </div>
+                <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <a href="https://x.com/c1tenn" target="_blank" rel="noopener" class="contact-method-item">
+                <div class="contact-icon twitter-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </div>
+                <div class="contact-method-info">
+                  <span class="contact-method-label">X (Twitter)</span>
+                  <span class="contact-method-value">x.com/c1tenn</span>
+                </div>
+                <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="mailto:ianhnk01@gmail.com">Email</a>
+          <a href="https://github.com/ihnk-dbg" target="_blank">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer reveal">
+    <div class="footer-inner">
+      <!-- Footer Top Section -->
+      <div class="footer-top">
+        <!-- Branding Section -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="footer-logo-text">IH</span>
+          </div>
+          <div class="footer-brand-info">
+            <h3 class="footer-name">Ian Hnk</h3>
+            <p class="footer-tagline">Full-Stack Developer</p>
+            <p class="footer-location muted">Based in Johannesburg · Remote</p>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h4 class="footer-nav-title">Quick Links</h4>
+          <ul class="footer-nav-links">
+            <li><a href="#home" data-target="home" class="footer-link">Home</a></li>
+            <li><a href="#about" data-target="about" class="footer-link">About</a></li>
+            <li><a href="#projects" data-target="projects" class="footer-link">Projects</a></li>
+            <li><a href="#skills" data-target="skills" class="footer-link">Skills</a></li>
+            <li><a href="#contact" data-target="contact" class="footer-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Social Links -->
+        <div class="footer-social">
+          <h4 class="footer-social-title">Connect</h4>
+          <div class="footer-social-icons">
+            <a href="https://github.com/ihnk-dbg" target="_blank" rel="noopener" class="footer-social-icon" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span class="footer-social-tooltip">GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/ianhnk" target="_blank" rel="noopener" class="footer-social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              <span class="footer-social-tooltip">LinkedIn</span>
+            </a>
+            <a href="https://x.com/c1tenn" target="_blank" rel="noopener" class="footer-social-icon" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              <span class="footer-social-tooltip">X (Twitter)</span>
+            </a>
+            <a href="mailto:ianhnk01@gmail.com" class="footer-social-icon" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span class="footer-social-tooltip">Email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Section -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          <span>© 2025 Ian Hnk- Full-Stack Dev.</span>
+        </p>
+        <button id="scroll-to-top" class="scroll-to-top-btn" aria-label="Scroll to top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Assistant chat modal (hidden by default) -->
+  <div id="assistant-modal" class="assistant-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Personal assistant chat">
+    <div class="assistant-backdrop" data-close="true"></div>
+    <div class="assistant-panel">
+      <header class="assistant-header">
+        <h3>Ask Ian's assistant</h3>
+        <button id="assistant-close" class="icon-btn" aria-label="Close chat">✕</button>
+      </header>
+      <div id="assistant-messages" class="assistant-messages" role="log" aria-live="polite"></div>
+      <form id="assistant-form" class="assistant-form">
+        <input id="assistant-input" name="q" type="text" placeholder="Ask about my work, projects, or experience..." aria-label="Ask the assistant">
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+      <div class="assistant-note sr-only" id="assistant-note">Assistant not configured — local demo responses only.</div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

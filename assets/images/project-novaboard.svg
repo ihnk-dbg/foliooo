@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#6b46ff" />
+      <stop offset="1" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#0b1220" />
+  <rect x="40" y="40" width="1120" height="620" rx="14" fill="url(#g)" opacity="0.12" />
+  <g fill="#fff" font-family="Arial, Helvetica, sans-serif">
+    <text x="80" y="140" font-size="44" font-weight="700">NovaBoard — AI Task Intelligence</text>
+    <text x="80" y="200" font-size="18" fill="#cfe7ff">Realtime insights dashboard that synthesizes telemetry and summarizes blockers using LLMs.</text>
+
+    <rect x="80" y="260" width="440" height="220" rx="10" fill="#081223" opacity="0.6" />
+    <text x="100" y="300" font-size="16" fill="#9fbfe6">• Live telemetry chart (mock)</text>
+    <text x="100" y="330" font-size="16" fill="#9fbfe6">• Auto-summaries & risk scoring</text>
+    <text x="100" y="360" font-size="16" fill="#9fbfe6">• Role-based dashboards</text>
+
+    <g transform="translate(620,260)">
+      <rect width="420" height="120" rx="8" fill="#072034" opacity="0.7" />
+      <text x="14" y="36" font-size="14" fill="#dff6ff">Latency (ms)</text>
+      <text x="14" y="64" font-size="28" fill="#fff">120</text>
+    </g>
+  </g>
+</svg>

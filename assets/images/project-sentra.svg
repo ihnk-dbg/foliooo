@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="100%" height="100%" fill="#071022" />
+  <g font-family="Arial, Helvetica, sans-serif" fill="#e6eef8">
+    <text x="60" y="120" font-size="44" font-weight="700">Sentra — Security Monitoring</text>
+    <text x="60" y="170" font-size="18" fill="#9aa4b2">ML-based anomaly detection for API behavior, with alerting and signatures.</text>
+
+    <rect x="60" y="220" width="520" height="320" rx="12" fill="#0b1220" opacity="0.6" />
+    <text x="80" y="270" font-size="16" fill="#a8c0d8">• Streaming anomaly models</text>
+    <text x="80" y="300" font-size="16" fill="#a8c0d8">• Low-latency alert pipelines</text>
+    <text x="80" y="330" font-size="16" fill="#a8c0d8">• Auto-generated signatures</text>
+
+    <g transform="translate(620,240)">
+      <rect width="480" height="140" rx="8" fill="#0b1220" opacity="0.08" />
+      <text x="14" y="36" font-size="14" fill="#cfe7ff">Pilot results</text>
+      <text x="14" y="64" font-size="24" fill="#fff">94% detection (pilot)</text>
+    </g>
+  </g>
+</svg>

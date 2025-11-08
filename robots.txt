@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://c1tenn.dev/sitemap.xml
+
