@@ -30,6 +30,37 @@
   requestAnimationFrame(() => body.classList.remove('no-transitions'));
 
   // ============================================
+  // SCROLL POSITION INITIALIZATION
+  // ============================================
+  // Only reset scroll on first page load (not on reloads or visibility changes)
+  // This allows sticky positioning and natural scroll behavior to work
+  
+  // Check if this is a fresh page load (not a reload with hash)
+  const isFirstLoad = !sessionStorage.getItem('hasScrolled') && !window.location.hash;
+  
+  // Only reset scroll on true first load
+  if (isFirstLoad) {
+    // Scroll to top only on first load
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    
+    // Mark that we've handled the first load
+    sessionStorage.setItem('hasScrolled', 'true');
+  }
+  
+  // Allow browser's scroll restoration for better UX
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'auto';
+  }
+  
+  // Clear session storage when user navigates away (for true fresh loads)
+  window.addEventListener('beforeunload', () => {
+    // Only clear if not a hash navigation
+    if (!window.location.hash) {
+      sessionStorage.removeItem('hasScrolled');
+    }
+  });
+
+  // ============================================
   // SKILL DROPDOWN ANIMATIONS
   // ============================================
   // Animate skill bars on dropdown hover with staggered timing
@@ -735,7 +766,12 @@
       
       // Find section with highest visibility score
       let bestSection = null;
-      let bestScore = 0;
+      let bestScore = -1;
+      
+      const viewportTop = window.scrollY;
+      const viewportBottom = window.scrollY + window.innerHeight;
+      const navH = navbar ? navbar.offsetHeight : 0;
+      const viewportCenter = viewportTop + navH + (window.innerHeight - navH) / 3; // Top third of viewport
       
       entries.forEach(e => {
         if (!e.isIntersecting) return;
@@ -744,21 +780,34 @@
         const data = sectionData.get(sectionId);
         if (!data) return;
         
-        // Calculate visibility: how much of section is in viewport
-        const viewportTop = window.scrollY;
-        const viewportBottom = window.scrollY + window.innerHeight;
-        const navH = navbar ? navbar.offsetHeight : 0;
-        
+        // Calculate how much of section is visible in viewport
         const visibleTop = Math.max(viewportTop + navH, data.top);
         const visibleBottom = Math.min(viewportBottom, data.bottom);
         const visibleHeight = Math.max(0, visibleBottom - visibleTop);
-        const visibilityRatio = visibleHeight / data.height;
+        const visibilityRatio = visibleHeight / Math.max(data.height, 1);
         
-        // Prefer sections near top of viewport
-        const distanceFromTop = Math.abs(data.top - (viewportTop + navH));
-        const distanceScore = 1 / (1 + distanceFromTop / 200);
+        // Calculate distance from viewport top third (prefer sections near top)
+        const sectionCenter = data.top + data.height / 2;
+        const distanceFromViewportTop = Math.abs(sectionCenter - viewportCenter);
+        const distanceScore = 1 / (1 + distanceFromViewportTop / 300);
         
-        const score = visibilityRatio * 0.7 + distanceScore * 0.3;
+        // Bonus for sections that start above viewport top (fully scrolled past)
+        const scrollPastBonus = data.top < viewportTop + navH ? 0.2 : 0;
+        
+        // Penalty if section is mostly below viewport
+        const sectionTopInViewport = data.top >= viewportTop + navH && data.top <= viewportBottom;
+        const topInViewBonus = sectionTopInViewport ? 0.3 : 0;
+        
+        // Special handling for home section - should be active when at top
+        const isHomeSection = sectionId === 'home';
+        const atTop = viewportTop < 150;
+        if (isHomeSection && atTop) {
+          bestSection = e.target;
+          bestScore = 999; // Highest priority
+          return;
+        }
+        
+        const score = visibilityRatio * 0.5 + distanceScore * 0.3 + scrollPastBonus + topInViewBonus;
         
         if (score > bestScore) {
           bestScore = score;
@@ -770,11 +819,21 @@
         updateActiveNavLink(bestSection.id);
       }
     }, { 
-      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-      rootMargin: `-${navbar ? navbar.offsetHeight : 0}px 0px -50% 0px`
+      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1.0],
+      rootMargin: `-${navbar ? navbar.offsetHeight + 20 : 20}px 0px -60% 0px`
     });
 
     sections.forEach(s => activeIo.observe(s));
+    
+    // Initialize home as active if at top of page
+    setTimeout(() => {
+      if (window.scrollY < 150) {
+        updateActiveNavLink('home');
+      } else {
+        // If not at top, determine active section based on scroll position
+        handleScroll();
+      }
+    }, 50);
     
     // Handle edge cases: top of page and footer area
     const handleScroll = () => {
@@ -785,8 +844,8 @@
       const documentHeight = document.documentElement.scrollHeight;
       const navH = navbar ? navbar.offsetHeight : 0;
       
-      // At top of page: highlight home
-      if (scrollY < 100) {
+      // At top of page: highlight home (increased threshold for better detection)
+      if (scrollY < 150) {
         const homeLink = navLinksMap.get('home');
         if (homeLink && currentActiveSection !== 'home') {
           updateActiveNavLink('home');
@@ -807,15 +866,28 @@
         return;
       }
       
-      // Fallback: find section closest to viewport center
+      // Fallback: find section closest to viewport top third (more accurate)
       let activeSection = null;
       let minDistance = Infinity;
+      const viewportTopThird = scrollY + navH + windowHeight / 3;
       
       sectionData.forEach((data, id) => {
-        const viewportCenter = scrollY + navH + windowHeight / 3;
+        // Check if section is in viewport
+        const sectionTop = data.top;
+        const sectionBottom = data.bottom;
         
-        if (viewportCenter >= data.top && viewportCenter <= data.bottom) {
-          const distance = Math.abs(viewportCenter - (data.top + data.height / 2));
+        // Section is active if viewport top third is within section bounds
+        if (viewportTopThird >= sectionTop && viewportTopThird <= sectionBottom) {
+          const sectionCenter = sectionTop + data.height / 2;
+          const distance = Math.abs(viewportTopThird - sectionCenter);
+          if (distance < minDistance) {
+            minDistance = distance;
+            activeSection = document.getElementById(id);
+          }
+        }
+        // Also check if section starts above viewport but is still the closest
+        else if (sectionTop < viewportTopThird && sectionBottom > viewportTopThird) {
+          const distance = viewportTopThird - sectionTop;
           if (distance < minDistance) {
             minDistance = distance;
             activeSection = document.getElementById(id);
@@ -825,6 +897,9 @@
       
       if (activeSection && currentActiveSection !== activeSection.id) {
         updateActiveNavLink(activeSection.id);
+      } else if (!activeSection && scrollY < 200) {
+        // If no section found and near top, default to home
+        updateActiveNavLink('home');
       }
     };
     
@@ -835,7 +910,14 @@
       scrollTimeout = setTimeout(handleScroll, 50);
     }, { passive: true });
     
-    handleScroll(); // Initial check
+    // Initial check - ensure home is active if at top of page
+    setTimeout(() => {
+      if (window.scrollY < 150) {
+        updateActiveNavLink('home');
+      } else {
+        handleScroll();
+      }
+    }, 100);
     
     // Prevent scroll spy updates during programmatic scrolling
     document.querySelectorAll('.nav-links a[data-target]').forEach(a => {
@@ -1468,8 +1550,14 @@
   const bytInput = document.getElementById('byt-input');
   const bytSendBtn = document.getElementById('byt-send');
   const suggestionChips = document.querySelectorAll('.suggestion-chip');
+  const bytClearBtn = document.getElementById('byt-clear');
+  const statusText = document.querySelector('.status-text');
+  const statusTyping = document.querySelector('.status-typing');
 
   if (!bytMessages || !bytInput || !bytSendBtn) return;
+  
+  // Keep track of initial welcome message
+  const initialMessage = bytMessages.querySelector('.byt-message-bot');
 
   // Knowledge base about Ian
   const knowledgeBase = {
@@ -1508,27 +1596,113 @@
     return "I can tell you about Ian's experience, tech stack, projects, achievements, or approach. Try asking about any of these topics! 💡";
   }
 
+  // Get current timestamp
+  function getTimestamp() {
+    const now = new Date();
+    return now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+  }
+
   function addMessage(text, isUser = false) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `byt-message ${isUser ? 'byt-message-user' : 'byt-message-bot'}`;
+    messageDiv.setAttribute('data-timestamp', getTimestamp());
     
+    // Add avatar for bot messages
+    if (!isUser) {
+      const avatarDiv = document.createElement('div');
+      avatarDiv.className = 'message-avatar';
+      avatarDiv.innerHTML = `
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="12" fill="url(#bytGradientSmall${Date.now()})"/>
+          <path d="M12 8 C10 8 8 9 8 11 L8 13 C8 14 9 15 10 15 L14 15 C15 15 16 14 16 13 L16 11 C16 9 14 8 12 8 Z" fill="white" opacity="0.9"/>
+          <circle cx="10" cy="11" r="1" fill="#4F46E5"/>
+          <circle cx="14" cy="11" r="1" fill="#4F46E5"/>
+          <path d="M10 13 Q12 14 14 13" stroke="#4F46E5" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+          <defs>
+            <linearGradient id="bytGradientSmall${Date.now()}" x1="0" y1="0" x2="24" y2="24">
+              <stop offset="0%" stop-color="#4F46E5"/>
+              <stop offset="100%" stop-color="#6366F1"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      `;
+      messageDiv.appendChild(avatarDiv);
+    }
+    
+    // Message wrapper
+    const wrapperDiv = document.createElement('div');
+    wrapperDiv.className = 'message-wrapper';
+    
+    // Content
     const contentDiv = document.createElement('div');
     contentDiv.className = 'message-content';
     
     const p = document.createElement('p');
-    p.textContent = text;
+    // Support basic markdown-like formatting
+    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    p.innerHTML = text;
     contentDiv.appendChild(p);
     
-    messageDiv.appendChild(contentDiv);
+    wrapperDiv.appendChild(contentDiv);
+    
+    // Add message actions (copy button)
+    if (!isUser) {
+      const actionsDiv = document.createElement('div');
+      actionsDiv.className = 'message-actions';
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'message-action';
+      copyBtn.setAttribute('data-action', 'copy');
+      copyBtn.setAttribute('aria-label', 'Copy message');
+      copyBtn.setAttribute('title', 'Copy');
+      copyBtn.innerHTML = `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+        </svg>
+      `;
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(text.replace(/<[^>]*>/g, '')).then(() => {
+          copyBtn.innerHTML = `
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          `;
+          setTimeout(() => {
+            copyBtn.innerHTML = `
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+            `;
+          }, 2000);
+        });
+      });
+      actionsDiv.appendChild(copyBtn);
+      wrapperDiv.appendChild(actionsDiv);
+    }
+    
+    messageDiv.appendChild(wrapperDiv);
     bytMessages.appendChild(messageDiv);
     
-    // Scroll to bottom
-    bytMessages.scrollTop = bytMessages.scrollHeight;
+    // Smooth scroll to bottom
+    setTimeout(() => {
+      bytMessages.scrollTo({
+        top: bytMessages.scrollHeight,
+        behavior: 'smooth'
+      });
+    }, 100);
     
     return messageDiv;
   }
 
   function showTyping() {
+    // Show typing indicator in status
+    if (statusText && statusTyping) {
+      statusText.style.display = 'none';
+      statusTyping.style.display = 'inline';
+    }
+    
     const typingDiv = document.createElement('div');
     typingDiv.className = 'byt-typing';
     typingDiv.innerHTML = '<span></span><span></span><span></span>';
@@ -1536,47 +1710,185 @@
     bytMessages.scrollTop = bytMessages.scrollHeight;
     return typingDiv;
   }
+  
+  function hideTyping() {
+    if (statusText && statusTyping) {
+      statusText.style.display = 'inline';
+      statusTyping.style.display = 'none';
+    }
+  }
 
   function removeTyping(typingDiv) {
+    hideTyping();
     if (typingDiv && typingDiv.parentNode) {
       typingDiv.remove();
     }
+  }
+  
+  // Clear chat function
+  function clearChat() {
+    if (!confirm('Clear all messages?')) return;
+    
+    // Remove all messages except the initial welcome message
+    const messages = bytMessages.querySelectorAll('.byt-message');
+    messages.forEach(msg => {
+      if (msg !== initialMessage) {
+        msg.remove();
+      }
+    });
+    
+    // Reset to welcome state
+    if (initialMessage) {
+      initialMessage.style.display = 'flex';
+    }
+  }
+  
+  // Enable/disable send button based on input
+  function updateSendButton() {
+    const hasText = bytInput.value.trim().length > 0;
+    bytSendBtn.disabled = !hasText;
   }
 
   function sendMessage() {
     const query = bytInput.value.trim();
     if (!query) return;
 
+    // Hide initial message if visible
+    if (initialMessage) {
+      initialMessage.style.display = 'none';
+    }
+
     // Add user message
     addMessage(query, true);
     bytInput.value = '';
-    bytSendBtn.disabled = true;
+    updateSendButton();
 
     // Show typing indicator
     const typing = showTyping();
 
-    // Simulate AI thinking time
+    // Simulate AI thinking time (variable for more natural feel)
+    const thinkingTime = 600 + Math.random() * 600;
     setTimeout(() => {
       removeTyping(typing);
       
       // Get response
       const response = getResponse(query);
       
-      // Add bot response with typing effect
-      addMessage(response);
+      // Add bot response with typing effect (character by character for longer messages)
+      if (response.length > 100) {
+        typeMessage(response);
+      } else {
+        addMessage(response);
+      }
       
-      bytSendBtn.disabled = false;
+      updateSendButton();
       bytInput.focus();
-    }, 800 + Math.random() * 400);
+    }, thinkingTime);
+  }
+  
+  // Type message character by character for longer responses
+  function typeMessage(text) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'byt-message byt-message-bot';
+    messageDiv.setAttribute('data-timestamp', getTimestamp());
+    
+    // Avatar
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'message-avatar';
+    avatarDiv.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="12" fill="url(#bytGradientSmall${Date.now()})"/>
+        <path d="M12 8 C10 8 8 9 8 11 L8 13 C8 14 9 15 10 15 L14 15 C15 15 16 14 16 13 L16 11 C16 9 14 8 12 8 Z" fill="white" opacity="0.9"/>
+        <circle cx="10" cy="11" r="1" fill="#4F46E5"/>
+        <circle cx="14" cy="11" r="1" fill="#4F46E5"/>
+        <path d="M10 13 Q12 14 14 13" stroke="#4F46E5" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        <defs>
+          <linearGradient id="bytGradientSmall${Date.now()}" x1="0" y1="0" x2="24" y2="24">
+            <stop offset="0%" stop-color="#4F46E5"/>
+            <stop offset="100%" stop-color="#6366F1"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    `;
+    messageDiv.appendChild(avatarDiv);
+    
+    const wrapperDiv = document.createElement('div');
+    wrapperDiv.className = 'message-wrapper';
+    
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'message-content';
+    const p = document.createElement('p');
+    contentDiv.appendChild(p);
+    wrapperDiv.appendChild(contentDiv);
+    
+    // Actions
+    const actionsDiv = document.createElement('div');
+    actionsDiv.className = 'message-actions';
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'message-action';
+    copyBtn.setAttribute('data-action', 'copy');
+    copyBtn.setAttribute('aria-label', 'Copy message');
+    copyBtn.innerHTML = `
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+      </svg>
+    `;
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(text.replace(/<[^>]*>/g, ''));
+      copyBtn.innerHTML = `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      `;
+      setTimeout(() => {
+        copyBtn.innerHTML = `
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+        `;
+      }, 2000);
+    });
+    actionsDiv.appendChild(copyBtn);
+    wrapperDiv.appendChild(actionsDiv);
+    
+    messageDiv.appendChild(wrapperDiv);
+    bytMessages.appendChild(messageDiv);
+    
+    // Type out the message
+    let index = 0;
+    const cleanText = text.replace(/<[^>]*>/g, '');
+    const typingInterval = setInterval(() => {
+      if (index < cleanText.length) {
+        p.textContent = cleanText.substring(0, index + 1);
+        index++;
+        bytMessages.scrollTop = bytMessages.scrollHeight;
+      } else {
+        clearInterval(typingInterval);
+        // Add formatting back
+        const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        p.innerHTML = formattedText.replace(/\*(.*?)\*/g, '<em>$1</em>');
+      }
+    }, 20);
   }
 
   // Event listeners
   bytSendBtn.addEventListener('click', sendMessage);
   
+  // Clear chat button
+  if (bytClearBtn) {
+    bytClearBtn.addEventListener('click', clearChat);
+  }
+  
+  // Input handling
+  bytInput.addEventListener('input', updateSendButton);
   bytInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      sendMessage();
+      if (!bytSendBtn.disabled) {
+        sendMessage();
+      }
     }
   });
 
@@ -1591,10 +1903,95 @@
     });
   });
 
-  // Focus input on load
-  setTimeout(() => {
-    bytInput.focus();
-  }, 500);
+  // Don't auto-focus on page load to prevent scroll jump
+  // Only focus when user explicitly interacts with the assistant
+  // Focus when user clicks on the input area
+  const bytInputArea = document.querySelector('.byt-input-area');
+  if (bytInputArea && bytInput) {
+    bytInputArea.addEventListener('click', (e) => {
+      // Only focus if clicking on the input area itself, not on buttons
+      if (e.target === bytInputArea || e.target === bytInput || e.target.closest('input')) {
+        setTimeout(() => {
+          bytInput.focus();
+        }, 50);
+      }
+    });
+  }
+  
+  // Also focus when clicking directly on the input
+  if (bytInput) {
+    bytInput.addEventListener('focus', () => {
+      // Allow manual focus, just don't auto-focus on load
+    }, { passive: true });
+  }
+  
+  // Initialize send button state
+  updateSendButton();
+
+  // ============================================
+  // INTERSECTION OBSERVER FOR ABOUT SECTION
+  // Manages assistant visibility based on scroll position
+  // ============================================
+  const aboutSection = document.getElementById('about');
+  const aboutVisual = document.querySelector('.about-visual');
+  
+  if (aboutSection && aboutVisual && 'IntersectionObserver' in window) {
+    // Create observer to track when about section is in viewport
+    const aboutObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // About section is in view - ensure assistant is active
+            aboutVisual.classList.add('is-active');
+            aboutSection.classList.add('about-section-active');
+          } else {
+            // About section is out of view
+            // Keep assistant visible if we're still scrolling through it
+            // Only hide if we've scrolled well past it
+            const rect = entry.boundingClientRect;
+            if (rect.bottom < -200) {
+              // Well past the section
+              aboutVisual.classList.remove('is-active');
+              aboutSection.classList.remove('about-section-active');
+            }
+          }
+        });
+      },
+      {
+        root: null, // Use viewport as root
+        rootMargin: '-20% 0px -20% 0px', // Trigger when section is 20% into viewport
+        threshold: [0, 0.1, 0.5, 1.0] // Multiple thresholds for better tracking
+      }
+    );
+    
+    // Start observing the about section
+    aboutObserver.observe(aboutSection);
+    
+    // Also watch for scroll events to handle edge cases
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      const aboutRect = aboutSection.getBoundingClientRect();
+      const aboutTop = aboutRect.top + currentScrollY;
+      const aboutBottom = aboutTop + aboutRect.height;
+      
+      // Check if we're within the about section
+      if (currentScrollY >= aboutTop - 100 && currentScrollY <= aboutBottom + 100) {
+        aboutVisual.classList.add('is-active');
+        aboutSection.classList.add('about-section-active');
+      } else if (currentScrollY < aboutTop - 200) {
+        // Well before the section
+        aboutVisual.classList.remove('is-active');
+        aboutSection.classList.remove('about-section-active');
+      } else if (currentScrollY > aboutBottom + 200) {
+        // Well past the section
+        aboutVisual.classList.remove('is-active');
+        aboutSection.classList.remove('about-section-active');
+      }
+      
+      lastScrollY = currentScrollY;
+    }, { passive: true });
+  }
 })();
 
 // Enhanced Projects Section - Filtering & Modal
